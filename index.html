@@ -47,12 +47,32 @@
         /* Gaya Gambar Aplikasi */
         .app-image { width: 100%; height: auto; max-height: 350px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e2e8f0; }
 
-        /* Gaya Galeri Foto Absen Online */
+        /* Gaya Galeri Foto */
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-bottom: 15px; }
         .gallery-grid img { width: 100%; height: 100px; object-fit: cover; border-radius: 6px; border: 1px solid #cbd5e1; transition: transform 0.2s; }
         .gallery-grid img:hover { transform: scale(1.05); }
 
-        .btn { display: inline-block; background-color: #2a5298; color: white; padding: 8px 18px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.9em; transition: 0.3s; }
+        /* Gaya Pemutar Video */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* Rasio 16:9 */
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #cbd5e1;
+            background-color: #000;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        .btn { display: inline-block; background-color: #2a5298; color: white; padding: 8px 18px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.9em; transition: 0.3s; margin: 3px; }
         .btn:hover { background-color: #1e3c72; }
         
         /* Bagian Kontak */
@@ -97,8 +117,13 @@
                 <img src="brosur.png" alt="Absen Online 8">
             </div>
 
+            <h4>Video Simulasi Aplikasi:</h4>
+            <div class="video-container">
+                <iframe src="https://drive.google.com/file/d/1pQISfYFkStycr91faevIRUWRdJyMQty9/preview" allow="autoplay"></iframe>
+            </div>
+
             <p>Solusi presensi digital praktis dan akurat menggunakan pemindaian barcode. Mempercepat proses rekapitulasi kehadiran harian serta meminimalkan kecurangan absen di lingkungan sekolah.</p>
-            <a href="https://drive.google.com/file/d/1pQISfYFkStycr91faevIRUWRdJyMQty9/view?usp=sharing" class="btn" target="_blank">Pelajari / Lihat Video Simulasi</a>
+            
             <a href="https://drive.google.com/file/d/1s4CymZEP_1Ysc5m2LU0MZizgFK0sf2YM/view?usp=sharing" class="btn" target="_blank">Lihat Brosur / Panduan</a>
             <a href="https://wa.me/6282376998298?text=Halo%20Pak%20Watono,%20saya%20tertarik%20dengan%20aplikasi%20pendidikan%20Anda" class="btn-wa" target="_blank">Hubungi via WhatsApp</a>
         </div>
@@ -108,7 +133,7 @@
             <span class="badge">Target: Kepala Sekolah & Guru</span>
             <img src="sipaguru.jpg" alt="Sipaguru" class="app-image">
             <p>Platform terpadu pengarsipan dokumen administrasi guru/sekolah sekaligus sistem pencatatan pelanggaran siswa berbasis poin untuk mendukung pembinaan karakter yang terstruktur.</p>
-            <a href="https://drive.google.com/file/d/1pQISfYFkStycr91faevIRUWRdJyMQty9/view?usp=sharing" class="btn" target="_blank">Liat Brosur/Panduan</a>
+            <a href="https://drive.google.com/file/d/1pQISfYFkStycr91faevIRUWRdJyMQty9/view?usp=sharing" class="btn" target="_blank">Lihat Brosur/Panduan</a>
         </div>
 
         <div class="app-card">
