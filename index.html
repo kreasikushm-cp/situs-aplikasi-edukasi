@@ -6,19 +6,48 @@
     <title>Situs Aplikasi Edukasi</title>
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f6f9; color: #333; line-height: 1.6; }
-        header { background-color: #1e3c72; color: white; padding: 30px 20px; text-align: center; }
-        header h1 { margin: 0; font-size: 2.2em; }
-        header p { margin-top: 8px; opacity: 0.9; font-size: 1.1em; }
+        
+        /* Layout Header dengan Foto dan Logo */
+        header { 
+            background-color: #1e3c72; 
+            color: white; 
+            padding: 20px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: space-between; 
+            flex-wrap: wrap; 
+            gap: 15px; 
+        }
+        
+        .header-img { 
+            width: 90px; 
+            height: 90px; 
+            object-fit: cover; 
+            border-radius: 50%; 
+            border: 3px solid #ffffff; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2); 
+            margin: 0 auto;
+        }
+
+        .header-text { 
+            flex: 1; 
+            text-align: center; 
+            min-width: 260px; 
+        }
+        
+        .header-text h1 { margin: 0; font-size: 2em; }
+        .header-text p { margin-top: 8px; opacity: 0.9; font-size: 1.05em; }
+
         .container { width: 85%; max-width: 900px; margin: 30px auto; }
         
         .app-card { background: white; border-radius: 10px; padding: 22px; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-left: 5px solid #2a5298; }
         .app-card h3 { color: #1e3c72; margin-top: 0; margin-bottom: 8px; }
         .badge { display: inline-block; background-color: #eef2f5; color: #2a5298; padding: 4px 10px; border-radius: 15px; font-size: 0.85em; font-weight: bold; margin-bottom: 12px; }
         
-        /* Gaya Gambar Tunggal */
+        /* Gaya Gambar Aplikasi */
         .app-image { width: 100%; height: auto; max-height: 350px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e2e8f0; }
 
-        /* Gaya Galeri Foto (Khusus Absen Online) */
+        /* Gaya Galeri Foto Absen Online */
         .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-bottom: 15px; }
         .gallery-grid img { width: 100%; height: 100px; object-fit: cover; border-radius: 6px; border: 1px solid #cbd5e1; transition: transform 0.2s; }
         .gallery-grid img:hover { transform: scale(1.05); }
@@ -40,8 +69,14 @@
 <body>
 
     <header>
-        <h1>Situs Aplikasi Edukasi</h1>
-        <p>Solusi Digitalisasi Administrasi, Presensi, dan Pembinaan Sekolah</p>
+        <img src="watono.jpg" alt="Foto Watono" class="header-img">
+        
+        <div class="header-text">
+            <h1>Situs Aplikasi Edukasi</h1>
+            <p>Solusi Digitalisasi Administrasi, Presensi, dan Pembinaan Sekolah</p>
+        </div>
+
+        <img src="sahabat belajar.jpg" alt="Logo Sahabat Belajar" class="header-img">
     </header>
 
     <div class="container">
@@ -52,14 +87,13 @@
             <span class="badge">Target: Guru, Siswa, & Staf</span>
             
             <div class="gallery-grid">
-                <img src="absen.jpg" alt="Absen Online 1">
+                <img src="absen1.jpg" alt="Absen Online 1">
                 <img src="absen2.jpg" alt="Absen Online 2">
                 <img src="absen3.jpg" alt="Absen Online 3">
                 <img src="absen4.jpg" alt="Absen Online 4">
                 <img src="absen5.jpg" alt="Absen Online 5">
                 <img src="absen6.jpg" alt="Absen Online 6">
                 <img src="absen7.jpg" alt="Absen Online 7">
-                <img src="absen8.jpg" alt="Absen Online 8">
             </div>
 
             <p>Solusi presensi digital praktis dan akurat menggunakan pemindaian barcode. Mempercepat proses rekapitulasi kehadiran harian serta meminimalkan kecurangan absen di lingkungan sekolah.</p>
