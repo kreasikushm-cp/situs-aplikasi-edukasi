@@ -1,0 +1,102 @@
+body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f6f9; color: #333; line-height: 1.6; }
+
+/* Layout Header & Navigasi */
+header { 
+    background-color: #1e3c72; 
+    color: white; 
+    padding: 20px 20px 0 20px; 
+}
+
+.header-container {
+    display: flex; 
+    align-items: center; 
+    justify-content: space-between; 
+    flex-wrap: wrap; 
+    gap: 15px; 
+}
+
+.header-img { 
+    width: 90px; 
+    height: 90px; 
+    object-fit: cover; 
+    border-radius: 50%; 
+    border: 3px solid #ffffff; 
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2); 
+    margin: 0 auto;
+}
+
+.header-text { 
+    flex: 1; 
+    text-align: center; 
+    min-width: 260px; 
+}
+
+.header-text h1 { margin: 0; font-size: 2em; }
+.header-text p { margin-top: 8px; opacity: 0.9; font-size: 1.05em; }
+
+/* Menu Navigasi */
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #152a52;
+    margin-top: 20px;
+    padding: 10px 0;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 16px;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+
+.navbar a:hover, .navbar a.active {
+    background-color: #2a5298;
+}
+
+.container { width: 85%; max-width: 900px; margin: 30px auto; }
+
+.app-card { background: white; border-radius: 10px; padding: 22px; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-left: 5px solid #2a5298; }
+.app-card h3 { color: #1e3c72; margin-top: 0; margin-bottom: 8px; }
+.badge { display: inline-block; background-color: #eef2f5; color: #2a5298; padding: 4px 10px; border-radius: 15px; font-size: 0.85em; font-weight: bold; margin-bottom: 12px; }
+
+/* Gaya Gambar & Galeri Aplikasi */
+.app-image { width: 100%; height: auto; max-height: 350px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e2e8f0; }
+
+.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-bottom: 15px; }
+.gallery-grid img { width: 100%; height: 100px; object-fit: cover; border-radius: 6px; border: 1px solid #cbd5e1; transition: transform 0.2s; }
+.gallery-grid img:hover { transform: scale(1.05); }
+
+/* Gaya Pemutar Video */
+.video-wrapper { max-width: 600px; margin: 0 auto 15px auto; }
+.video-container { position: relative; padding-bottom: 45%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid #cbd5e1; background-color: #000; }
+.video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+
+/* Tombol-tombol Action */
+.btn { display: inline-block; background-color: #2a5298; color: white; padding: 8px 18px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.9em; transition: 0.3s; margin: 3px; }
+.btn:hover { background-color: #1e3c72; }
+.btn-wa { display: inline-block; background-color: #25D366; color: white; padding: 8px 18px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.9em; transition: 0.3s; margin: 3px; }
+.btn-wa:hover { background-color: #1ebc57; }
+.btn-email { display: inline-block; background-color: #e74c3c; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 5px; }
+.btn-email:hover { background-color: #c0392b; }
+
+/* Kolom Komentar */
+.comments-section { margin-top: 20px; padding-top: 15px; border-top: 1px dashed #cbd5e1; background: #f8fafc; padding: 15px; border-radius: 8px; }
+.comments-section h4 { margin: 0 0 10px 0; color: #1e3c72; font-size: 1em; }
+.comment-form { display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px; }
+.comment-form input, .comment-form textarea { width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 5px; font-family: inherit; font-size: 0.9em; box-sizing: border-box; }
+.comment-form button { align-self: flex-start; background-color: #2a5298; color: white; border: none; padding: 8px 16px; border-radius: 5px; font-weight: bold; cursor: pointer; }
+.comment-form button:hover { background-color: #1e3c72; }
+.comment-list { display: flex; flex-direction: column; gap: 10px; }
+.comment-item { background: white; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 12px; font-size: 0.9em; }
+.comment-header { font-weight: bold; color: #1e3c72; margin-bottom: 3px; display: flex; justify-content: space-between; }
+.comment-time { font-size: 0.75em; color: #888; font-weight: normal; }
+
+.contact-section { background: white; border-radius: 10px; padding: 25px; text-align: center; margin-top: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 4px solid #27ae60; }
+.contact-section h2 { color: #1e3c72; margin-top: 0; }
+
+footer { text-align: center; padding: 20px; background: #e2e8f0; margin-top: 40px; color: #555; }
