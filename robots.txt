@@ -1,1 +1,4 @@
+User-agent: *
+Allow: /
 
+Sitemap: https://kreasikushm-cp.github.io/situs-aplikasi-edukasi/sitemap.xml
