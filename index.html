@@ -7,7 +7,7 @@
     <style>
         body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f6f9; color: #333; line-height: 1.6; }
         
-        /* Layout Header dengan Foto dan Logo */
+        /* Layout Header */
         header { 
             background-color: #1e3c72; 
             color: white; 
@@ -52,14 +52,14 @@
         .gallery-grid img { width: 100%; height: 100px; object-fit: cover; border-radius: 6px; border: 1px solid #cbd5e1; transition: transform 0.2s; }
         .gallery-grid img:hover { transform: scale(1.05); }
 
-        /* Gaya Pemutar Video (Ukuran Lebih Kecil & Kompak) */
+        /* Gaya Pemutar Video Ringkas */
         .video-wrapper {
             max-width: 600px;
             margin: 0 auto 15px auto;
         }
         .video-container {
             position: relative;
-            padding-bottom: 45%; /* Rasio lebih ringkas */
+            padding-bottom: 45%; 
             height: 0;
             overflow: hidden;
             border-radius: 8px;
@@ -77,22 +77,56 @@
 
         .btn { display: inline-block; background-color: #2a5298; color: white; padding: 8px 18px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.9em; transition: 0.3s; margin: 3px; }
         .btn:hover { background-color: #1e3c72; }
-        
-        /* Bagian Testimoni / Komentar Sekolah */
-        .testimonial-section { background: white; border-radius: 10px; padding: 25px; margin-top: 35px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 4px solid #f39c12; }
-        .testimonial-section h2 { color: #1e3c72; margin-top: 0; text-align: center; margin-bottom: 20px; }
-        .testimonial-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 15px; }
-        .testimonial-card { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 15px; font-style: italic; position: relative; }
-        .testimonial-card p { margin: 0 0 10px 0; color: #475569; font-size: 0.95em; }
-        .testimonial-author { font-style: normal; font-weight: bold; color: #1e3c72; text-align: right; font-size: 0.85em; }
-
-        /* Bagian Kontak */
-        .contact-section { background: white; border-radius: 10px; padding: 25px; text-align: center; margin-top: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 4px solid #27ae60; }
-        .contact-section h2 { color: #1e3c72; margin-top: 0; }
         .btn-wa { display: inline-block; background-color: #25D366; color: white; padding: 8px 18px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.9em; transition: 0.3s; margin: 3px; }
         .btn-wa:hover { background-color: #1ebc57; }
         .btn-email { display: inline-block; background-color: #e74c3c; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 5px; }
         .btn-email:hover { background-color: #c0392b; }
+
+        /* Area Kolom Komentar Interaktif */
+        .comments-section {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px dashed #cbd5e1;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 8px;
+        }
+        .comments-section h4 { margin: 0 0 10px 0; color: #1e3c72; font-size: 1em; }
+        .comment-form { display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px; }
+        .comment-form input, .comment-form textarea {
+            width: 100%;
+            padding: 8px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 5px;
+            font-family: inherit;
+            font-size: 0.9em;
+            box-sizing: border-box;
+        }
+        .comment-form button {
+            align-self: flex-start;
+            background-color: #2a5298;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        .comment-form button:hover { background-color: #1e3c72; }
+        .comment-list { display: flex; flex-direction: column; gap: 10px; }
+        .comment-item {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 10px 12px;
+            font-size: 0.9em;
+        }
+        .comment-header { font-weight: bold; color: #1e3c72; margin-bottom: 3px; display: flex; justify-content: space-between; }
+        .comment-time { font-size: 0.75em; color: #888; font-weight: normal; }
+        .comment-reply-btn { color: #2a5298; font-size: 0.8em; cursor: pointer; text-decoration: underline; margin-top: 5px; display: inline-block; }
+
+        .contact-section { background: white; border-radius: 10px; padding: 25px; text-align: center; margin-top: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 4px solid #27ae60; }
+        .contact-section h2 { color: #1e3c72; margin-top: 0; }
 
         footer { text-align: center; padding: 20px; background: #e2e8f0; margin-top: 40px; color: #555; }
     </style>
@@ -139,6 +173,21 @@
             
             <a href="https://drive.google.com/file/d/1s4CymZEP_1Ysc5m2LU0MZizgFK0sf2YM/view?usp=sharing" class="btn" target="_blank">Lihat Brosur / Panduan</a>
             <a href="https://wa.me/6282376998298?text=Halo%20Pak%20Watono,%20saya%20tertarik%20dengan%20aplikasi%20Absen%20Online" class="btn-wa" target="_blank">Hubungi via WhatsApp</a>
+
+            <div class="comments-section">
+                <h4>💬 Kolom Komentar & Diskusi (Absen Online)</h4>
+                <div class="comment-form">
+                    <input type="text" id="name-absen" placeholder="Nama / Asal Sekolah..." required>
+                    <textarea id="text-absen" rows="2" placeholder="Tuliskan pertanyaan atau tanggapan Anda..." required></textarea>
+                    <button onclick="addComment('absen')">Kirim Komentar</button>
+                </div>
+                <div class="comment-list" id="list-absen">
+                    <div class="comment-item">
+                        <div class="comment-header">Pak Watono (Pembuat Aplikasi) <span class="comment-time">Admin</span></div>
+                        <div>Silakan tinggalkan pertanyaan seputar fitur Absen Online Barcode di sini. Saya akan membalasnya langsung!</div>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <div class="app-card">
@@ -161,6 +210,21 @@
             
             <a href="https://drive.google.com/file/d/1RFiPVJYYr42iIZcEp8eZqvkUSAbA3AcT/view?usp=sharing" class="btn" target="_blank">Lihat Brosur / Panduan</a>
             <a href="https://wa.me/6282376998298?text=Halo%20Pak%20Watono,%20saya%20tertarik%20dengan%20aplikasi%20Sipaguru%20%26%20E-Pembinaan" class="btn-wa" target="_blank">Hubungi via WhatsApp</a>
+
+            <div class="comments-section">
+                <h4>💬 Kolom Komentar & Diskusi (Sipaguru)</h4>
+                <div class="comment-form">
+                    <input type="text" id="name-sipaguru" placeholder="Nama / Asal Sekolah..." required>
+                    <textarea id="text-sipaguru" rows="2" placeholder="Tuliskan pertanyaan atau tanggapan Anda..." required></textarea>
+                    <button onclick="addComment('sipaguru')">Kirim Komentar</button>
+                </div>
+                <div class="comment-list" id="list-sipaguru">
+                    <div class="comment-item">
+                        <div class="comment-header">Pak Watono (Pembuat Aplikasi) <span class="comment-time">Admin</span></div>
+                        <div>Ada pertanyaan mengenai integrasi poin pelanggaran siswa atau arsip administrasi? Tanya di sini ya.</div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="app-card">
@@ -169,6 +233,17 @@
             <img src="digarsip.jpg" alt="Digarsip" class="app-image">
             <p>Sistem manajemen surat masuk-keluar dan pengelolaan Buku Induk Siswa secara digital. Dilengkapi fitur cetak massal otomatis untuk efisiensi tata kelola administrasi sekolah.</p>
             <a href="https://drive.google.com/file/d/1pQISfYFkStycr91faevIRUWRdJyMQty9/view?usp=sharing" class="btn" target="_blank">Pelajari / Coba Aplikasi</a>
+            <a href="https://wa.me/6282376998298?text=Halo%20Pak%20Watono,%20saya%20tertarik%20dengan%20aplikasi%20Digarsip" class="btn-wa" target="_blank">Hubungi via WhatsApp</a>
+
+            <div class="comments-section">
+                <h4>💬 Kolom Komentar & Diskusi (Digarsip)</h4>
+                <div class="comment-form">
+                    <input type="text" id="name-digarsip" placeholder="Nama / Asal Sekolah..." required>
+                    <textarea id="text-digarsip" rows="2" placeholder="Tuliskan pertanyaan atau tanggapan Anda..." required></textarea>
+                    <button onclick="addComment('digarsip')">Kirim Komentar</button>
+                </div>
+                <div class="comment-list" id="list-digarsip"></div>
+            </div>
         </div>
 
         <div class="app-card">
@@ -177,6 +252,17 @@
             <img src="sihebat.jpg" alt="Sihebat" class="app-image">
             <p>Aplikasi pemantauan dan pembiasaan 7 karakter anak hebat secara harian. Membantu membentuk kedisiplinan dan gaya hidup positif siswa dengan pantauan langsung dari guru dan orang tua.</p>
             <a href="https://drive.google.com/file/d/1pQISfYFkStycr91faevIRUWRdJyMQty9/view?usp=sharing" class="btn" target="_blank">Pelajari / Coba Aplikasi</a>
+            <a href="https://wa.me/6282376998298?text=Halo%20Pak%20Watono,%20saya%20tertarik%20dengan%20aplikasi%20Sihebat" class="btn-wa" target="_blank">Hubungi via WhatsApp</a>
+
+            <div class="comments-section">
+                <h4>💬 Kolom Komentar & Diskusi (Sihebat)</h4>
+                <div class="comment-form">
+                    <input type="text" id="name-sihebat" placeholder="Nama / Asal Sekolah..." required>
+                    <textarea id="text-sihebat" rows="2" placeholder="Tuliskan pertanyaan atau tanggapan Anda..." required></textarea>
+                    <button onclick="addComment('sihebat')">Kirim Komentar</button>
+                </div>
+                <div class="comment-list" id="list-sihebat"></div>
+            </div>
         </div>
 
         <div class="app-card">
@@ -185,22 +271,16 @@
             <img src="smartbel.jpg" alt="Smartbel" class="app-image">
             <p>Kombinasi bel sekolah otomatis interaktif dengan sistem pemantauan kegiatan KBM secara real-time untuk memastikan ketepatan jadwal mengajar guru dan kelancaran proses belajar-mengajar.</p>
             <a href="https://drive.google.com/file/d/1pQISfYFkStycr91faevIRUWRdJyMQty9/view?usp=sharing" class="btn" target="_blank">Pelajari / Coba Aplikasi</a>
-        </div>
+            <a href="https://wa.me/6282376998298?text=Halo%20Pak%20Watono,%20saya%20tertarik%20dengan%20aplikasi%20Smartbel" class="btn-wa" target="_blank">Hubungi via WhatsApp</a>
 
-        <div class="testimonial-section">
-            <h2>Ulasan & Pengalaman Sekolah Pengguna</h2>
-            <div class="testimonial-grid">
-                
-                <div class="testimonial-card">
-                    <p>"Aplikasi Absen Online Barcode sangat membantu tim kedisiplinan sekolah. Rekap kehadiran siswa sekarang bisa selesai dalam hitungan menit!"</p>
-                    <div class="testimonial-author">— Kepala Sekolah / Tim IT Sekolah</div>
+            <div class="comments-section">
+                <h4>💬 Kolom Komentar & Diskusi (Smartbel)</h4>
+                <div class="comment-form">
+                    <input type="text" id="name-smartbel" placeholder="Nama / Asal Sekolah..." required>
+                    <textarea id="text-smartbel" rows="2" placeholder="Tuliskan pertanyaan atau tanggapan Anda..." required></textarea>
+                    <button onclick="addComment('smartbel')">Kirim Komentar</button>
                 </div>
-
-                <div class="testimonial-card">
-                    <p>"Pengelolaan administrasi guru dan poin pembinaan siswa jadi jauh lebih rapi dan terarsip dengan baik menggunakan Sipaguru."</p>
-                    <div class="testimonial-author">— Guru Bimbingan Konseling (BK)</div>
-                </div>
-
+                <div class="comment-list" id="list-smartbel"></div>
             </div>
         </div>
 
@@ -216,6 +296,58 @@
     <footer>
         <p>&copy; 2026 Situs Aplikasi Edukasi | Karya Watono, S.Pd</p>
     </footer>
+
+    <script>
+        function loadComments(appId) {
+            const listContainer = document.getElementById('list-' + appId);
+            const savedComments = JSON.parse(localStorage.getItem('comments_' + appId) || '[]');
+            
+            savedComments.forEach(c => {
+                const item = document.createElement('div');
+                item.className = 'comment-item';
+                item.innerHTML = `<div class="comment-header">${c.name} <span class="comment-time">${c.time}</span></div><div>${c.text}</div>`;
+                listContainer.appendChild(item);
+            });
+        }
+
+        function addComment(appId) {
+            const nameInput = document.getElementById('name-' + appId);
+            const textInput = document.getElementById('text-' + appId);
+            
+            const name = nameInput.value.trim();
+            const text = textInput.value.trim();
+            
+            if(!name || !text) {
+                alert("Harap isi nama dan komentar Anda terlebih dahulu!");
+                return;
+            }
+
+            const time = new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+            
+            const newComment = { name, text, time };
+            
+            // Simpan ke localStorage
+            const savedComments = JSON.parse(localStorage.getItem('comments_' + appId) || '[]');
+            savedComments.push(newComment);
+            localStorage.setItem('comments_' + appId, JSON.stringify(savedComments));
+            
+            // Tampilkan di layar
+            const listContainer = document.getElementById('list-' + appId);
+            const item = document.createElement('div');
+            item.className = 'comment-item';
+            item.innerHTML = `<div class="comment-header">${name} <span class="comment-time">${time}</span></div><div>${text}</div>`;
+            listContainer.appendChild(item);
+            
+            // Bersihkan input
+            nameInput.value = '';
+            textInput.value = '';
+        }
+
+        // Muat komentar saat halaman dibuka
+        window.onload = function() {
+            ['absen', 'sipaguru', 'digarsip', 'sihebat', 'smartbel'].forEach(appId => loadComments(appId));
+        };
+    </script>
 
 </body>
 </html>
