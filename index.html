@@ -2,166 +2,51 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    
-    <meta name="google-site-verification" content="n6eUsMzKfuRsXWiLdatCdQyD_7eq1F5IqxZ_-0nQnsc" />
-    
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Situs Aplikasi Edukasi</title>
-    <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f6f9; color: #333; line-height: 1.6; }
-        
-        /* Layout Header */
-        header { 
-            background-color: #1e3c72; 
-            color: white; 
-            padding: 20px; 
-            display: flex; 
-            align-items: center; 
-            justify-content: space-between; 
-            flex-wrap: wrap; 
-            gap: 15px; 
-        }
-        
-        .header-img { 
-            width: 90px; 
-            height: 90px; 
-            object-fit: cover; 
-            border-radius: 50%; 
-            border: 3px solid #ffffff; 
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2); 
-            margin: 0 auto;
-        }
-
-        .header-text { 
-            flex: 1; 
-            text-align: center; 
-            min-width: 260px; 
-        }
-        
-        .header-text h1 { margin: 0; font-size: 2em; }
-        .header-text p { margin-top: 8px; opacity: 0.9; font-size: 1.05em; }
-
-        .container { width: 85%; max-width: 900px; margin: 30px auto; }
-        
-        .app-card { background: white; border-radius: 10px; padding: 22px; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-left: 5px solid #2a5298; }
-        .app-card h3 { color: #1e3c72; margin-top: 0; margin-bottom: 8px; }
-        .badge { display: inline-block; background-color: #eef2f5; color: #2a5298; padding: 4px 10px; border-radius: 15px; font-size: 0.85em; font-weight: bold; margin-bottom: 12px; }
-        
-        /* Gaya Gambar Aplikasi */
-        .app-image { width: 100%; height: auto; max-height: 350px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e2e8f0; }
-
-        /* Gaya Galeri Foto */
-        .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-bottom: 15px; }
-        .gallery-grid img { width: 100%; height: 100px; object-fit: cover; border-radius: 6px; border: 1px solid #cbd5e1; transition: transform 0.2s; }
-        .gallery-grid img:hover { transform: scale(1.05); }
-
-        /* Gaya Pemutar Video Ringkas */
-        .video-wrapper {
-            max-width: 600px;
-            margin: 0 auto 15px auto;
-        }
-        .video-container {
-            position: relative;
-            padding-bottom: 45%; 
-            height: 0;
-            overflow: hidden;
-            border-radius: 8px;
-            border: 1px solid #cbd5e1;
-            background-color: #000;
-        }
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        .btn { display: inline-block; background-color: #2a5298; color: white; padding: 8px 18px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.9em; transition: 0.3s; margin: 3px; }
-        .btn:hover { background-color: #1e3c72; }
-        .btn-wa { display: inline-block; background-color: #25D366; color: white; padding: 8px 18px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.9em; transition: 0.3s; margin: 3px; }
-        .btn-wa:hover { background-color: #1ebc57; }
-        .btn-email { display: inline-block; background-color: #e74c3c; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 5px; }
-        .btn-email:hover { background-color: #c0392b; }
-
-        /* Area Kolom Komentar Interaktif */
-        .comments-section {
-            margin-top: 20px;
-            padding-top: 15px;
-            border-top: 1px dashed #cbd5e1;
-            background: #f8fafc;
-            padding: 15px;
-            border-radius: 8px;
-        }
-        .comments-section h4 { margin: 0 0 10px 0; color: #1e3c72; font-size: 1em; }
-        .comment-form { display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px; }
-        .comment-form input, .comment-form textarea {
-            width: 100%;
-            padding: 8px 12px;
-            border: 1px solid #cbd5e1;
-            border-radius: 5px;
-            font-family: inherit;
-            font-size: 0.9em;
-            box-sizing: border-box;
-        }
-        .comment-form button {
-            align-self: flex-start;
-            background-color: #2a5298;
-            color: white;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-        }
-        .comment-form button:hover { background-color: #1e3c72; }
-        .comment-list { display: flex; flex-direction: column; gap: 10px; }
-        .comment-item {
-            background: white;
-            border: 1px solid #e2e8f0;
-            border-radius: 6px;
-            padding: 10px 12px;
-            font-size: 0.9em;
-        }
-        .comment-header { font-weight: bold; color: #1e3c72; margin-bottom: 3px; display: flex; justify-content: space-between; }
-        .comment-time { font-size: 0.75em; color: #888; font-weight: normal; }
-
-        .contact-section { background: white; border-radius: 10px; padding: 25px; text-align: center; margin-top: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 4px solid #27ae60; }
-        .contact-section h2 { color: #1e3c72; margin-top: 0; }
-
-        footer { text-align: center; padding: 20px; background: #e2e8f0; margin-top: 40px; color: #555; }
-    </style>
+    <meta name="google-site-verification" content="n6eUsMzKfuRsXWiLdatCdQyD_7eq1F5IqxZ_-0nQnsc" />
+    <title>Sahabat Belajar Digital - Solusi Digitalisasi Sekolah</title>
+    
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
     <header>
-        <img src="watono.jpg" alt="Foto Watono" class="header-img">
-        
-        <div class="header-text">
-            <h1>Situs Aplikasi Edukasi</h1>
-            <p>Solusi Digitalisasi Administrasi, Presensi, dan Pembinaan Sekolah</p>
+        <div class="header-container">
+            <img src="images/watono.jpg" alt="Foto Watono" class="header-img">
+            
+            <div class="header-text">
+                <h1>Sahabat Belajar Digital</h1>
+                <p>Solusi Digitalisasi Administrasi, Presensi, dan Pembinaan Sekolah</p>
+            </div>
+
+            <img src="images/logo.png" alt="Logo Sahabat Belajar" class="header-img">
         </div>
 
-        <img src="sahabat belajar.png" alt="Logo Sahabat Belajar" class="header-img">
+        <nav class="navbar">
+            <a href="index.html" class="active">Beranda</a>
+            <a href="aplikasi.html">Daftar Aplikasi</a>
+            <a href="tentang.html">Tentang Kami</a>
+            <a href="artikel.html">Artikel/Edukasi</a>
+            <a href="kontak.html">Kontak</a>
+        </nav>
     </header>
 
     <div class="container">
-        <h2>Daftar Aplikasi Pendidikan</h2>
+        <h2>Aplikasi Unggulan Pendidikan</h2>
 
         <div class="app-card">
             <h3>A. Absen Online Berbasis Barcode</h3>
             <span class="badge">Target: Guru, Siswa, & Staf</span>
             
             <div class="gallery-grid">
-                <img src="dashboard.jpg" alt="Absen Online 1">
-                <img src="scan.jpg" alt="Absen Online 2">
-                <img src="laporan harian.jpg" alt="Absen Online 3">
-                <img src="laporan bulanan.jpg" alt="Absen Online 4">
-                <img src="siswa belum absen.jpg" alt="Absen Online 5">
-                <img src="form ijin.jpg" alt="Absen Online 6">
-                <img src="praktik.jpg" alt="Absen Online 7">
-                <img src="brosur.png" alt="Absen Online 8">
+                <img src="images/dashboard.jpg" alt="Absen Online 1">
+                <img src="images/scan.jpg" alt="Absen Online 2">
+                <img src="images/laporan harian.jpg" alt="Absen Online 3">
+                <img src="images/laporan bulanan.jpg" alt="Absen Online 4">
+                <img src="images/siswa belum absen.jpg" alt="Absen Online 5">
+                <img src="images/form ijin.jpg" alt="Absen Online 6">
+                <img src="images/praktik.jpg" alt="Absen Online 7">
+                <img src="images/brosur.png" alt="Absen Online 8">
             </div>
 
             <h4 style="text-align: center; margin-bottom: 8px;">Video Simulasi Aplikasi:</h4>
@@ -173,7 +58,7 @@
 
             <p>Solusi presensi digital praktis dan akurat menggunakan pemindaian barcode. Mempercepat proses rekapitulasi kehadiran harian serta meminimalkan kecurangan absen di lingkungan sekolah.</p>
             
-            <a href="https://drive.google.com/file/d/1s4CymZEP_1Ysc5m2LU0MZizgFK0sf2YM/view?usp=sharing" class="btn" target="_blank">Lihat Brosur / Panduan</a>
+            <a href="aplikasi/absen-online.html" class="btn">Detail Fitur Selengkapnya</a>
             <a href="https://wa.me/6282376998298?text=Halo%20Pak%20Watono,%20saya%20tertarik%20dengan%20aplikasi%20Absen%20Online" class="btn-wa" target="_blank">Hubungi via WhatsApp</a>
 
             <div class="comments-section">
@@ -197,20 +82,20 @@
             <span class="badge">Target: Kepala Sekolah & Guru</span>
             
             <div class="gallery-grid">
-                <img src="1.jpg" alt="Sipaguru 1">
-                <img src="2.jpg" alt="Sipaguru 2">
-                <img src="3.jpg" alt="Sipaguru 3">
-                <img src="4.jpg" alt="Sipaguru 4">
-                <img src="5.jpg" alt="Sipaguru 5">
-                <img src="6.jpg" alt="Sipaguru 6">
-                <img src="7.jpg" alt="Sipaguru 7">
-                <img src="8.jpg" alt="Sipaguru 8">
-                <img src="9.jpg" alt="Sipaguru 9">
+                <img src="images/1.jpg" alt="Sipaguru 1">
+                <img src="images/2.jpg" alt="Sipaguru 2">
+                <img src="images/3.jpg" alt="Sipaguru 3">
+                <img src="images/4.jpg" alt="Sipaguru 4">
+                <img src="images/5.jpg" alt="Sipaguru 5">
+                <img src="images/6.jpg" alt="Sipaguru 6">
+                <img src="images/7.jpg" alt="Sipaguru 7">
+                <img src="images/8.jpg" alt="Sipaguru 8">
+                <img src="images/9.jpg" alt="Sipaguru 9">
             </div>
 
             <p>Platform terpadu pengarsipan dokumen administrasi guru/sekolah sekaligus sistem pencatatan pelanggaran siswa berbasis poin untuk mendukung pembinaan karakter yang terstruktur.</p>
             
-            <a href="https://drive.google.com/file/d/1RFiPVJYYr42iIZcEp8eZqvkUSAbA3AcT/view?usp=sharing" class="btn" target="_blank">Lihat Brosur / Panduan</a>
+            <a href="aplikasi/sipaguru.html" class="btn">Detail Fitur Selengkapnya</a>
             <a href="https://wa.me/6282376998298?text=Halo%20Pak%20Watono,%20saya%20tertarik%20dengan%20aplikasi%20Sipaguru%20%26%20E-Pembinaan" class="btn-wa" target="_blank">Hubungi via WhatsApp</a>
 
             <div class="comments-section">
@@ -234,11 +119,11 @@
             <span class="badge">Target: Tata Usaha (TU)</span>
             
             <div class="gallery-grid">
-                <img src="d1.jpg" alt="Digarsip 1">
-                <img src="d2.jpg" alt="Digarsip 2">
-                <img src="d3.jpg" alt="Digarsip 3">
-                <img src="d4.jpg" alt="Digarsip 4">
-                <img src="d5.jpg" alt="Digarsip 5">
+                <img src="images/d1.jpg" alt="Digarsip 1">
+                <img src="images/d2.jpg" alt="Digarsip 2">
+                <img src="images/d3.jpg" alt="Digarsip 3">
+                <img src="images/d4.jpg" alt="Digarsip 4">
+                <img src="images/d5.jpg" alt="Digarsip 5">
             </div>
 
             <h4 style="text-align: center; margin-bottom: 8px;">Video Simulasi Aplikasi:</h4>
@@ -249,7 +134,7 @@
             </div>
             
             <p>Sistem manajemen surat masuk-keluar dan pengelolaan Buku Induk Siswa secara digital. Dilengkapi fitur cetak massal otomatis untuk efisiensi tata kelola administrasi sekolah.</p>
-            <a href="https://drive.google.com/file/d/1dJiWvyEaWk7bJs94-DKU8gcprPHPJoTN/view?usp=sharing" class="btn" target="_blank">Pelajari / Coba Aplikasi</a>
+            <a href="aplikasi/digarsip.html" class="btn">Detail Fitur Selengkapnya</a>
             <a href="https://wa.me/6282376998298?text=Halo%20Pak%20Watono,%20saya%20tertarik%20dengan%20aplikasi%20Digarsip" class="btn-wa" target="_blank">Hubungi via WhatsApp</a>
 
             <div class="comments-section">
@@ -261,22 +146,22 @@
                 </div>
                 <div class="comment-list" id="list-digarsip"></div>
             </div>
-        </div> 
+        </div>
 
         <div class="app-card">
             <h3>D. Sihebat</h3>
             <span class="badge">Target: Siswa, Orang Tua, & Wali Kelas</span>
             
             <div class="gallery-grid">
-                <img src="a.jpg" alt="Sihebat 1">
-                <img src="b.png" alt="Sihebat 2">
-                <img src="c.jpg" alt="Sihebat 3">
-                <img src="d.jpg" alt="Sihebat 4">
-                <img src="e.jpg" alt="Sihebat 5">
+                <img src="images/a.jpg" alt="Sihebat 1">
+                <img src="images/b.png" alt="Sihebat 2">
+                <img src="images/c.jpg" alt="Sihebat 3">
+                <img src="images/d.jpg" alt="Sihebat 4">
+                <img src="images/e.jpg" alt="Sihebat 5">
             </div>
                 
             <p>Aplikasi pemantauan dan pembiasaan 7 karakter anak hebat secara harian. Membantu membentuk kedisiplinan dan gaya hidup positif siswa dengan pantauan langsung dari guru dan orang tua.</p>
-            <a href="https://drive.google.com/file/d/1pQISfYFkStycr91faevIRUWRdJyMQty9/view?usp=sharing" class="btn" target="_blank">Pelajari / Coba Aplikasi</a>
+            <a href="aplikasi/sihebat.html" class="btn">Detail Fitur Selengkapnya</a>
             <a href="https://wa.me/6282376998298?text=Halo%20Pak%20Watono,%20saya%20tertarik%20dengan%20aplikasi%20Sihebat" class="btn-wa" target="_blank">Hubungi via WhatsApp</a>
 
             <div class="comments-section">
@@ -293,9 +178,9 @@
         <div class="app-card">
             <h3>E. Smartbel + E-Monitoring Mengajar</h3>
             <span class="badge">Target: Manajemen Sekolah & Guru</span>
-            <img src="smartbel.jpg" alt="Smartbel" class="app-image">
+            <img src="images/smartbel.jpg" alt="Smartbel" class="app-image">
             <p>Kombinasi bel sekolah otomatis interaktif dengan sistem pemantauan kegiatan KBM secara real-time untuk memastikan ketepatan jadwal mengajar guru dan kelancaran proses belajar-mengajar.</p>
-            <a href="https://drive.google.com/file/d/1pQISfYFkStycr91faevIRUWRdJyMQty9/view?usp=sharing" class="btn" target="_blank">Pelajari / Coba Aplikasi</a>
+            <a href="aplikasi/smartbel.html" class="btn">Detail Fitur Selengkapnya</a>
             <a href="https://wa.me/6282376998298?text=Halo%20Pak%20Watono,%20saya%20tertarik%20dengan%20aplikasi%20Smartbel" class="btn-wa" target="_blank">Hubungi via WhatsApp</a>
 
             <div class="comments-section">
@@ -319,60 +204,10 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 Situs Aplikasi Edukasi | Karya Watono, S.Pd</p>
+        <p>&copy; 2026 Sahabat Belajar Digital | Karya Watono, S.Pd</p>
     </footer>
 
-    <script>
-        function loadComments(appId) {
-            const listContainer = document.getElementById('list-' + appId);
-            const savedComments = JSON.parse(localStorage.getItem('comments_' + appId) || '[]');
-            
-            savedComments.forEach(c => {
-                const item = document.createElement('div');
-                item.className = 'comment-item';
-                item.innerHTML = `<div class="comment-header">${c.name} <span class="comment-time">${c.time}</span></div><div>${c.text}</div>`;
-                listContainer.appendChild(item);
-            });
-        }
-
-        function addComment(appId) {
-            const nameInput = document.getElementById('name-' + appId);
-            const textInput = document.getElementById('text-' + appId);
-            
-            const name = nameInput.value.trim();
-            const text = textInput.value.trim();
-            
-            if(!name || !text) {
-                alert("Harap isi nama dan komentar Anda terlebih dahulu!");
-                return;
-            }
-
-            const time = new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
-            
-            const newComment = { name, text, time };
-            
-            // Simpan ke localStorage
-            const savedComments = JSON.parse(localStorage.getItem('comments_' + appId) || '[]');
-            savedComments.push(newComment);
-            localStorage.setItem('comments_' + appId, JSON.stringify(savedComments));
-            
-            // Tampilkan di layar
-            const listContainer = document.getElementById('list-' + appId);
-            const item = document.createElement('div');
-            item.className = 'comment-item';
-            item.innerHTML = `<div class="comment-header">${name} <span class="comment-time">${time}</span></div><div>${text}</div>`;
-            listContainer.appendChild(item);
-            
-            // Bersihkan input
-            nameInput.value = '';
-            textInput.value = '';
-        }
-
-        // Muat komentar saat halaman dibuka
-        window.onload = function() {
-            ['absen', 'sipaguru', 'digarsip', 'sihebat', 'smartbel'].forEach(appId => loadComments(appId));
-        };
-    </script>
+    <script src="js/script.js"></script>
 
 </body>
 </html>
