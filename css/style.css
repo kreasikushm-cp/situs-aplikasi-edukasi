@@ -1,102 +1,342 @@
-body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f4f6f9; color: #333; line-height: 1.6; }
+/* --- RESET & GLOBAL STYLE --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-/* Layout Header & Navigasi */
-header { 
-    background-color: #1e3c72; 
-    color: white; 
-    padding: 20px 20px 0 20px; 
+body {
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* --- HEADER DENGAN BACKGROUND TRANSPARAN --- */
+header {
+    position: relative;
+    /* Ganti 'images/dashboard.jpg' dengan nama file gambar background header pilihan Bapak jika ingin memakai gambar lain */
+    background: url('../images/dashboard.jpg') no-repeat center center/cover;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+}
+
+/* Lapisan transparan (overlay) hitam semi-transparan agar tulisan judul selalu kontras & jelas */
+header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 30, 60, 0.82); /* Menggunakan warna navy gelap transparan */
+    z-index: 1;
 }
 
 .header-container {
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    flex-wrap: wrap; 
-    gap: 15px; 
-}
-
-.header-img { 
-    width: 90px; 
-    height: 90px; 
-    object-fit: cover; 
-    border-radius: 50%; 
-    border: 3px solid #ffffff; 
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2); 
+    position: relative;
+    z-index: 2; /* Agar teks & gambar tampil di atas lapisan transparan */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1100px;
     margin: 0 auto;
+    padding: 25px 20px;
+    gap: 15px;
 }
 
-.header-text { 
-    flex: 1; 
-    text-align: center; 
-    min-width: 260px; 
+.header-text {
+    text-align: center;
+    flex: 1;
 }
 
-.header-text h1 { margin: 0; font-size: 2em; }
-.header-text p { margin-top: 8px; opacity: 0.9; font-size: 1.05em; }
+.header-text h1 {
+    font-size: 2em;
+    margin-bottom: 8px;
+    font-weight: 700;
+    text-shadow: 1px 2px 4px rgba(0,0,0,0.5);
+}
 
-/* Menu Navigasi */
+.header-text p {
+    font-size: 1.05em;
+    opacity: 0.95;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.header-img {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ffffff;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+    flex-shrink: 0;
+}
+
+/* --- NAVBAR RESPONSIVE --- */
 .navbar {
+    position: relative;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.3);
     display: flex;
     justify-content: center;
-    background-color: #152a52;
-    margin-top: 20px;
-    padding: 10px 0;
-    gap: 15px;
     flex-wrap: wrap;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
 }
 
 .navbar a {
     color: #ffffff;
+    padding: 14px 20px;
     text-decoration: none;
-    padding: 8px 16px;
-    font-weight: bold;
-    border-radius: 4px;
-    transition: 0.3s;
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: background 0.3s;
 }
 
 .navbar a:hover, .navbar a.active {
-    background-color: #2a5298;
+    background-color: #007bff;
 }
 
-.container { width: 85%; max-width: 900px; margin: 30px auto; }
+/* --- CONTAINER UTAMA --- */
+.container {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 15px;
+}
 
-.app-card { background: white; border-radius: 10px; padding: 22px; margin-bottom: 25px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-left: 5px solid #2a5298; }
-.app-card h3 { color: #1e3c72; margin-top: 0; margin-bottom: 8px; }
-.badge { display: inline-block; background-color: #eef2f5; color: #2a5298; padding: 4px 10px; border-radius: 15px; font-size: 0.85em; font-weight: bold; margin-bottom: 12px; }
+.container h2 {
+    text-align: center;
+    color: #1a365d;
+    margin-bottom: 25px;
+    font-size: 1.75em;
+}
 
-/* Gaya Gambar & Galeri Aplikasi */
-.app-image { width: 100%; height: auto; max-height: 350px; object-fit: cover; border-radius: 8px; margin-bottom: 15px; border: 1px solid #e2e8f0; }
+/* --- CARD APLIKASI --- */
+.app-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e1e8ed;
+}
 
-.gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 10px; margin-bottom: 15px; }
-.gallery-grid img { width: 100%; height: 100px; object-fit: cover; border-radius: 6px; border: 1px solid #cbd5e1; transition: transform 0.2s; }
-.gallery-grid img:hover { transform: scale(1.05); }
+.app-card h3 {
+    color: #1a365d;
+    margin-bottom: 10px;
+    font-size: 1.4em;
+}
 
-/* Gaya Pemutar Video */
-.video-wrapper { max-width: 600px; margin: 0 auto 15px auto; }
-.video-container { position: relative; padding-bottom: 45%; height: 0; overflow: hidden; border-radius: 8px; border: 1px solid #cbd5e1; background-color: #000; }
-.video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+.badge {
+    display: inline-block;
+    background-color: #e2e8f0;
+    color: #2d3748;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.85em;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
 
-/* Tombol-tombol Action */
-.btn { display: inline-block; background-color: #2a5298; color: white; padding: 8px 18px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.9em; transition: 0.3s; margin: 3px; }
-.btn:hover { background-color: #1e3c72; }
-.btn-wa { display: inline-block; background-color: #25D366; color: white; padding: 8px 18px; text-decoration: none; border-radius: 5px; font-weight: bold; font-size: 0.9em; transition: 0.3s; margin: 3px; }
-.btn-wa:hover { background-color: #1ebc57; }
-.btn-email { display: inline-block; background-color: #e74c3c; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold; margin: 5px; }
-.btn-email:hover { background-color: #c0392b; }
+/* --- GALERI GAMBAR GRID RESPONSIVE --- */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 10px;
+    margin: 15px 0 20px 0;
+}
 
-/* Kolom Komentar */
-.comments-section { margin-top: 20px; padding-top: 15px; border-top: 1px dashed #cbd5e1; background: #f8fafc; padding: 15px; border-radius: 8px; }
-.comments-section h4 { margin: 0 0 10px 0; color: #1e3c72; font-size: 1em; }
-.comment-form { display: flex; flex-direction: column; gap: 8px; margin-bottom: 15px; }
-.comment-form input, .comment-form textarea { width: 100%; padding: 8px 12px; border: 1px solid #cbd5e1; border-radius: 5px; font-family: inherit; font-size: 0.9em; box-sizing: border-box; }
-.comment-form button { align-self: flex-start; background-color: #2a5298; color: white; border: none; padding: 8px 16px; border-radius: 5px; font-weight: bold; cursor: pointer; }
-.comment-form button:hover { background-color: #1e3c72; }
-.comment-list { display: flex; flex-direction: column; gap: 10px; }
-.comment-item { background: white; border: 1px solid #e2e8f0; border-radius: 6px; padding: 10px 12px; font-size: 0.9em; }
-.comment-header { font-weight: bold; color: #1e3c72; margin-bottom: 3px; display: flex; justify-content: space-between; }
-.comment-time { font-size: 0.75em; color: #888; font-weight: normal; }
+.gallery-grid img {
+    width: 100%;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: transform 0.2s;
+}
 
-.contact-section { background: white; border-radius: 10px; padding: 25px; text-align: center; margin-top: 30px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); border-top: 4px solid #27ae60; }
-.contact-section h2 { color: #1e3c72; margin-top: 0; }
+.gallery-grid img:hover {
+    transform: scale(1.03);
+}
 
-footer { text-align: center; padding: 20px; background: #e2e8f0; margin-top: 40px; color: #555; }
+.app-image {
+    width: 100%;
+    max-height: 280px;
+    object-fit: contain;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+/* --- VIDEO EMBED RESPONSIVE --- */
+.video-wrapper {
+    max-width: 600px;
+    margin: 15px auto 20px auto;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Ratio 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* --- TOMBOL (BUTTONS) --- */
+.btn, .btn-wa, .btn-email {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9em;
+    margin: 5px 5px 10px 0;
+    text-align: center;
+    transition: opacity 0.2s;
+}
+
+.btn {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.btn-wa {
+    background-color: #25d366;
+    color: #ffffff;
+}
+
+.btn-email {
+    background-color: #dc3545;
+    color: #ffffff;
+}
+
+.btn:hover, .btn-wa:hover, .btn-email:hover {
+    opacity: 0.9;
+}
+
+/* --- SEKSI KOMENTAR --- */
+.comments-section {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px border-dash #e2e8f0;
+}
+
+.comment-form input, .comment-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 0.9em;
+}
+
+.comment-form button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.comment-list {
+    margin-top: 15px;
+}
+
+.comment-item {
+    background: #f8f9fa;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    border-left: 3px solid #007bff;
+    font-size: 0.9em;
+}
+
+.comment-header {
+    font-weight: bold;
+    color: #1a365d;
+    margin-bottom: 4px;
+}
+
+.comment-time {
+    font-size: 0.75em;
+    color: #888;
+    background: #e2e8f0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+/* --- SEKSI KONTAK DI FOOTER CONTAINER --- */
+.contact-section {
+    background: #ffffff;
+    padding: 30px 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    margin-bottom: 30px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1a365d;
+    color: #ffffff;
+    font-size: 0.9em;
+    margin-top: 40px;
+}
+
+/* --- OPTIMASI KHUSUS TAMPILAN HP (MOBILE RESPONSIVE) --- */
+@media (max-width: 600px) {
+    .header-container {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px 15px;
+    }
+
+    .header-img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .header-text h1 {
+        font-size: 1.5em;
+    }
+
+    .header-text p {
+        font-size: 0.9em;
+    }
+
+    .navbar {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar a {
+        width: 100%;
+        text-align: center;
+        padding: 12px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 kolom di HP agar gambar cukup jelas */
+    }
+
+    .btn, .btn-wa, .btn-email {
+        display: block;
+        width: 100%;
+        margin: 8px 0;
+    }
+}
