@@ -12,11 +12,13 @@ body {
     line-height: 1.6;
 }
 
-/* --- BANNER HEADER --- */
+/* --- HEADER & BANNER UTAMA --- */
 header {
     width: 100%;
     background-color: #0f1e3c;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column; /* Memastikan Urutan: Banner dulu di atas, baru Navigasi di bawahnya */
 }
 
 .banner-box {
@@ -29,8 +31,9 @@ header {
     min-height: 180px;
 }
 
-/* --- NAVBAR MENU --- */
+/* --- NAVBAR MENU (SELALU DI BAWAH BANNER) --- */
 .navbar {
+    width: 100%;
     background-color: #1a365d;
     display: flex;
     justify-content: center;
@@ -92,10 +95,9 @@ header {
     margin-bottom: 15px;
 }
 
-/* --- PERBAIKAN GALERI GAMBAR (DIBUAT LEBIH KECIL & RAPI) --- */
+/* --- GALERI GAMBAR PROPORSIONAL (KECIL & RAPI) --- */
 .gallery-grid {
     display: grid;
-    /* Membuat kolom lebih banyak dan ukuran item lebih kecil */
     grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     gap: 8px;
     margin: 15px 0 20px 0;
@@ -103,7 +105,7 @@ header {
 
 .gallery-grid img {
     width: 100%;
-    height: 80px; /* Diperkecil dari 110px ke 80px agar compact */
+    height: 80px;
     object-fit: cover;
     border-radius: 6px;
     border: 1px solid #e2e8f0;
@@ -117,22 +119,21 @@ header {
     z-index: 2;
 }
 
-/* Gambar Tunggal (seperti Smartbel) */
 .app-image {
     display: block;
-    max-width: 320px; /* Dibatasi lebarnya agar tidak memenuhi layar */
+    max-width: 320px;
     width: 100%;
     height: auto;
     max-height: 200px;
     object-fit: contain;
     border-radius: 8px;
-    margin: 15px auto; /* Ditengah posisi gambar */
+    margin: 15px auto;
     border: 1px solid #e2e8f0;
 }
 
-/* --- VIDEO EMBED RESPONSIVE --- */
+/* --- VIDEO EMBED --- */
 .video-wrapper {
-    max-width: 500px; /* Ukuran video juga disesuaikan agar proporsional */
+    max-width: 500px;
     margin: 15px auto 20px auto;
 }
 
@@ -240,7 +241,7 @@ header {
     margin-left: 5px;
 }
 
-/* --- SEKSI KONTAK DI FOOTER --- */
+/* --- KONTAK & FOOTER --- */
 .contact-section {
     background: #ffffff;
     padding: 30px 20px;
@@ -259,7 +260,7 @@ footer {
     margin-top: 40px;
 }
 
-/* --- PENGATURAN KHUSUS LAYAR HP (MOBILE RESPONSIVE) --- */
+/* --- TAMPILAN HP (MOBILE RESPONSIVE) --- */
 @media (max-width: 600px) {
     .banner-box {
         min-height: 120px;
@@ -278,14 +279,13 @@ footer {
         border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     }
 
-    /* Mengatur grid galeri di HP menjadi 3-4 kolom kecil yang sangat rapi */
     .gallery-grid {
         grid-template-columns: repeat(3, 1fr);
         gap: 6px;
     }
 
     .gallery-grid img {
-        height: 70px; /* Ukuran pas di HP tanpa memakan ruang banyak */
+        height: 70px;
     }
 
     .app-image {
