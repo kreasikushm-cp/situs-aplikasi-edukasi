@@ -35,9 +35,12 @@ async function loadAppsFromSheet() {
 // Fungsi untuk membuat elemen Gambar/Galeri
 function renderGallery(gambarString) {
     if (!gambarString) return '';
-    const images = gambarString.split(',').map(img => img.trim());
+    // Pisahkan koma dan bersihkan spasi
+    const images = gambarString.split(',').map(img => img.trim()).filter(img => img !== '');
     
-    // Jika hanya ada 1 gambar
+    if (images.length === 0) return '';
+
+    // Jika hanya 1 gambar
     if (images.length === 1) {
         return `
             <div style="text-align: center; margin: 15px 0;">
@@ -46,7 +49,7 @@ function renderGallery(gambarString) {
         `;
     }
     
-    // Jika ada banyak gambar (dipisah koma)
+    // Jika lebih dari 1 gambar (Galeri)
     return `
         <div class="gallery-grid">
             ${images.map(img => `<img src="${img}" alt="Gambar Aplikasi">`).join('')}
