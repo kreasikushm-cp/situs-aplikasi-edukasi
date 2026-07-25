@@ -1,3 +1,4 @@
+// Link CSV publikasi dari Google Sheets milik Pak Watono
 const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQspC551cEQXJ1kqVR9zJ4pBtx18VjbrLpBitS_6SOm3REOtQ8KrNMXVilvTSY7maBTlOfelhCAXbGL/pub?output=csv";
 
 async function loadAppsFromSheet() {
@@ -5,10 +6,11 @@ async function loadAppsFromSheet() {
         const response = await fetch(SHEET_CSV_URL);
         const data = await response.text();
         
-        // Memisah baris data dan mengabaikan baris judul/header
+        // Memisah baris data dan mengabaikan baris judul/header paling atas
         const rows = data.split(/\r?\n/).slice(1);
 
         const apps = rows.filter(row => row.trim() !== '').map(row => {
+            // Memisahkan kolom CSV
             const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(col => col.replace(/^"|"$/g, '').trim());
             
             return {
@@ -30,25 +32,53 @@ async function loadAppsFromSheet() {
     }
 }
 
+// Fungsi untuk membuat elemen Gambar/Galeri
+function renderGallery(gambarString) {
+    if (!gambarString) return '';
+    const images = gambarString.split(',').map(img => img.trim());
+    
+    // Jika hanya ada 1 gambar
+    if (images.length === 1) {
+        return `
+            <div style="text-align: center; margin: 15px 0;">
+                <img src="${images[0]}" class="app-image" style="max-width: 100%; height: auto; border-radius: 8px;">
+            </div>
+        `;
+    }
+    
+    // Jika ada banyak gambar (dipisah koma)
+    return `
+        <div class="gallery-grid">
+            ${images.map(img => `<img src="${img}" alt="Gambar Aplikasi">`).join('')}
+        </div>
+    `;
+}
+
 // Menampilkan Aplikasi Unggulan di Beranda (index.html)
 function renderFeaturedApp(apps) {
     const container = document.getElementById('featured-app-container');
     if (!container) return;
 
-    // Cari aplikasi yang status is_featured = TRUE
+    // Cari aplikasi yang kolom is_featured = TRUE di Google Sheets
     const featuredApp = apps.find(app => app.isFeatured) || apps[0];
-    if (!featuredApp) return;
+    if (!featuredApp) {
+        container.innerHTML = '<p style="text-align:center;">Belum ada data aplikasi.</p>';
+        return;
+    }
 
     container.innerHTML = `
         <div class="app-card">
             <h3>${featuredApp.nama}</h3>
             <span class="badge">${featuredApp.badge}</span>
-            <div style="text-align: center; margin: 15px 0;">
-                <img src="${featuredApp.gambar}" alt="${featuredApp.nama}" class="app-image">
+            
+            ${renderGallery(featuredApp.gambar)}
+            
+            <p style="margin-top: 15px;">${featuredApp.deskripsi}</p>
+            
+            <div style="margin-top: 15px;">
+                <a href="${featuredApp.linkDetail}" class="btn">Detail Fitur Selengkapnya</a>
+                <a href="${featuredApp.linkWa}" class="btn-wa" target="_blank">Hubungi via WhatsApp</a>
             </div>
-            <p>${featuredApp.deskripsi}</p>
-            <a href="${featuredApp.linkDetail}" class="btn">Detail Fitur Selengkapnya</a>
-            <a href="${featuredApp.linkWa}" class="btn-wa" target="_blank">Hubungi via WhatsApp</a>
         </div>
     `;
 }
@@ -58,18 +88,27 @@ function renderAllApps(apps) {
     const container = document.getElementById('all-apps-container');
     if (!container) return;
 
+    if (apps.length === 0) {
+        container.innerHTML = '<p style="text-align:center;">Belum ada data aplikasi.</p>';
+        return;
+    }
+
     container.innerHTML = apps.map(app => `
-        <div class="app-card">
+        <div class="app-card" style="margin-bottom: 25px;">
             <h3>${app.nama}</h3>
             <span class="badge">${app.badge}</span>
-            <div style="text-align: center; margin: 15px 0;">
-                <img src="${app.gambar}" alt="${app.nama}" class="app-image">
+            
+            ${renderGallery(app.gambar)}
+            
+            <p style="margin-top: 15px;">${app.deskripsi}</p>
+            
+            <div style="margin-top: 15px;">
+                <a href="${app.linkDetail}" class="btn">Lihat Detail Fitur Lengkap</a>
+                <a href="${app.linkWa}" class="btn-wa" target="_blank">Konsultasi via WhatsApp</a>
             </div>
-            <p>${app.deskripsi}</p>
-            <a href="${app.linkDetail}" class="btn">Lihat Detail Fitur Lengkap</a>
-            <a href="${app.linkWa}" class="btn-wa" target="_blank">Konsultasi via WhatsApp</a>
         </div>
     `).join('');
 }
 
+// Jalankan fungsi setelah halaman selesai dimuat
 document.addEventListener("DOMContentLoaded", loadAppsFromSheet);
