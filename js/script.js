@@ -9,7 +9,6 @@ async function loadAppsFromSheet() {
         const rows = data.split(/\r?\n/).slice(1);
 
         const apps = rows.filter(row => row.trim() !== '').map(row => {
-            // Memisahkan kolom CSV
             const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(col => col.replace(/^"|"$/g, '').trim());
             
             return {
@@ -36,7 +35,7 @@ function renderFeaturedApp(apps) {
     const container = document.getElementById('featured-app-container');
     if (!container) return;
 
-    // Cari aplikasi yang status is_featured = TRUE (jika tidak ada, ambil aplikasi pertama)
+    // Cari aplikasi yang status is_featured = TRUE
     const featuredApp = apps.find(app => app.isFeatured) || apps[0];
     if (!featuredApp) return;
 
