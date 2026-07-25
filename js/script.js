@@ -1,51 +1,76 @@
-function loadComments(appId) {
-    const listContainer = document.getElementById('list-' + appId);
-    if (!listContainer) return;
+const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQspC551cEQXJ1kqVR9zJ4pBtx18VjbrLpBitS_6SOm3REOtQ8KrNMXVilvTSY7maBTlOfelhCAXbGL/pub?output=csv";
 
-    const savedComments = JSON.parse(localStorage.getItem('comments_' + appId) || '[]');
-    
-    savedComments.forEach(c => {
-        const item = document.createElement('div');
-        item.className = 'comment-item';
-        item.innerHTML = `<div class="comment-header">${c.name} <span class="comment-time">${c.time}</span></div><div>${c.text}</div>`;
-        listContainer.appendChild(item);
-    });
-}
+async function loadAppsFromSheet() {
+    try {
+        const response = await fetch(SHEET_CSV_URL);
+        const data = await response.text();
+        
+        // Memisah baris data dan mengabaikan baris judul/header
+        const rows = data.split(/\r?\n/).slice(1);
 
-function addComment(appId) {
-    const nameInput = document.getElementById('name-' + appId);
-    const textInput = document.getElementById('text-' + appId);
-    
-    const name = nameInput.value.trim();
-    const text = textInput.value.trim();
-    
-    if(!name || !text) {
-        alert("Harap isi nama dan komentar Anda terlebih dahulu!");
-        return;
+        const apps = rows.filter(row => row.trim() !== '').map(row => {
+            // Memisahkan kolom CSV
+            const cols = row.split(/,(?=(?:(?:[^"]*"){2})*[^"]*$)/).map(col => col.replace(/^"|"$/g, '').trim());
+            
+            return {
+                id: cols[0] || '',
+                nama: cols[1] || '',
+                badge: cols[2] || '',
+                deskripsi: cols[3] || '',
+                gambar: cols[4] || '',
+                linkDetail: cols[5] || '',
+                linkWa: cols[6] || '',
+                isFeatured: (cols[7] || '').toUpperCase() === 'TRUE'
+            };
+        });
+
+        renderFeaturedApp(apps);
+        renderAllApps(apps);
+    } catch (error) {
+        console.error("Gagal memuat data dari Google Sheets:", error);
     }
-
-    const time = new Date().toLocaleDateString('id-ID', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
-    
-    const newComment = { name, text, time };
-    
-    // Simpan ke localStorage
-    const savedComments = JSON.parse(localStorage.getItem('comments_' + appId) || '[]');
-    savedComments.push(newComment);
-    localStorage.setItem('comments_' + appId, JSON.stringify(savedComments));
-    
-    // Tampilkan di layar
-    const listContainer = document.getElementById('list-' + appId);
-    const item = document.createElement('div');
-    item.className = 'comment-item';
-    item.innerHTML = `<div class="comment-header">${name} <span class="comment-time">${time}</span></div><div>${text}</div>`;
-    listContainer.appendChild(item);
-    
-    // Bersihkan input
-    nameInput.value = '';
-    textInput.value = '';
 }
 
-// Muat komentar saat halaman dibuka
-window.onload = function() {
-    ['absen', 'sipaguru', 'digarsip', 'sihebat', 'smartbel'].forEach(appId => loadComments(appId));
-};
+// Menampilkan Aplikasi Unggulan di Beranda (index.html)
+function renderFeaturedApp(apps) {
+    const container = document.getElementById('featured-app-container');
+    if (!container) return;
+
+    // Cari aplikasi yang status is_featured = TRUE (jika tidak ada, ambil aplikasi pertama)
+    const featuredApp = apps.find(app => app.isFeatured) || apps[0];
+    if (!featuredApp) return;
+
+    container.innerHTML = `
+        <div class="app-card">
+            <h3>${featuredApp.nama}</h3>
+            <span class="badge">${featuredApp.badge}</span>
+            <div style="text-align: center; margin: 15px 0;">
+                <img src="${featuredApp.gambar}" alt="${featuredApp.nama}" class="app-image">
+            </div>
+            <p>${featuredApp.deskripsi}</p>
+            <a href="${featuredApp.linkDetail}" class="btn">Detail Fitur Selengkapnya</a>
+            <a href="${featuredApp.linkWa}" class="btn-wa" target="_blank">Hubungi via WhatsApp</a>
+        </div>
+    `;
+}
+
+// Menampilkan Seluruh Aplikasi di Halaman Daftar Aplikasi (aplikasi.html)
+function renderAllApps(apps) {
+    const container = document.getElementById('all-apps-container');
+    if (!container) return;
+
+    container.innerHTML = apps.map(app => `
+        <div class="app-card">
+            <h3>${app.nama}</h3>
+            <span class="badge">${app.badge}</span>
+            <div style="text-align: center; margin: 15px 0;">
+                <img src="${app.gambar}" alt="${app.nama}" class="app-image">
+            </div>
+            <p>${app.deskripsi}</p>
+            <a href="${app.linkDetail}" class="btn">Lihat Detail Fitur Lengkap</a>
+            <a href="${app.linkWa}" class="btn-wa" target="_blank">Konsultasi via WhatsApp</a>
+        </div>
+    `).join('');
+}
+
+document.addEventListener("DOMContentLoaded", loadAppsFromSheet);
