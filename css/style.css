@@ -23,12 +23,12 @@ header {
 
 .banner-box {
     width: 100%;
-    max-width: 1200px;
+    max-width: 1000px; /* Diperkecil dari 1200px agar sejajar dengan lebar kontainer konten */
     margin: 0 auto;
     background: url('../images/bacground.png') no-repeat center center;
     background-size: contain;
-    aspect-ratio: 16 / 7;
-    min-height: 180px;
+    aspect-ratio: 16 / 5; /* Diubah dari 16/7 menjadi 16/5 agar lebih gepeng/ramping */
+    min-height: 140px;    /* Diperkecil dari 180px */
 }
 
 /* --- NAVBAR MENU (SELALU DI BAWAH BANNER) --- */
@@ -263,8 +263,9 @@ footer {
 /* --- TAMPILAN HP (MOBILE RESPONSIVE) --- */
 @media (max-width: 600px) {
     .banner-box {
-        min-height: 120px;
-        background-size: cover;
+        min-height: 90px; /* Ukuran lebih ramping di HP */
+        aspect-ratio: 16 / 6;
+        background-size: contain;
     }
 
     .navbar {
