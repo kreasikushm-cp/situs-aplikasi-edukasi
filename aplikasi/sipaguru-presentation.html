@@ -1,0 +1,915 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <script>window["__codeletBootstrap__"]=JSON.parse('{"A":"A","B":"20260825-05-ee72b97","C":{"Abril Fatface":"YACgEZbkUVE,0","Alfa Slab One":"YACgEYS9sJU,0","Anton":"YACgEcYqQ-A,0","Archivo":"YAHO2-t-jNE,0","Arial":"YAGyDvJ_4Ts,0","Bebas Neue":"YACgESME5ew,0","Bricolage Grotesque":"YAFyMcdwzpc,0","Canva Sans":"YAFLd8sKbwc,2","Caveat":"YALBs2ploWQ,0","Comic Sans MS":"YAHO2VMiyZo,0","Cormorant Garamond":"YAFdJhX-538,0","Courier New":"YAGzXiGs0_8,0","DM Sans":"YAD1aU3sLnI,0","DM Serif Display":"YAD1aYG82rc,0","Forum":"YACgEcnnqB4,0","Fraunces":"YAEul-FRQw4,0","Georgia":"YAGzXkO0pEM,0","Helvetica Neue":"YAFcf6CtJfI,0","Impact":"YAFcfnjI7Vk,0","Inter":"YAFdJvSyp_k,3","Iowan Old Style":"YAGNIFa8j9o,0","Jacques Francois":"YAHO2a5g66Q,0","JetBrains Mono":"YAFdJksXcAk,0","Libre Baskerville":"YACgEUFdPdA,0","Manrope":"YAHO2b2feC4,0","Merriweather":"YACgEXvHxxs,0","Montserrat":"YADLjI9qxTA,0","Nunito":"YACgEX8C5Gg,0","Oleo Script":"YACgEQQ14jI,0","Phantom Sans":"YAHO2E8Pb88,0","Playfair Display":"YACgEYmuCJE,0","Poppins":"YAFdJjbTu24,1","Press Start 2P":"YAFyGr-8pmQ,0","Quicksand":"YADWjpfPmdk,0","Raleway":"YACgEVg3xZg,0","Segoe UI":"YAHNdRD1Klw,0","Source Sans 3":"YAG4lO1Mj10,0","Spectral":"YAHO2rVUHIM,0","Times New Roman":"YAGzXW3gftg,0","Times":"YAGzXW3gftg,0","Ubuntu":"YACgERDU--Q,0","Work Sans":"YAGXhLOKv44,0","Yellowtail":"YACgEYG4kG4,0","ui-monospace":"YADlN8CFZ8Q,0","ui-sans-serif":"YACkoN-xg4g,0"}}');</script>
+  <script src="/_sdk/50d846425a1e5082.telemetry_sdk.js" integrity="sha512-Otbex+ztlVbcEGql0rXGd/3E3ee/hqAntg6DeuUEMG6pIPbXGOSvZbFZVzknAXi1tH/itQ+ijEhOTr2aWj6CXg=="></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sosialisasi SIPAGURU</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&amp;family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;display=swap" rel="stylesheet">
+  <style>
+    :root { --blue:#0757b8; --navy:#082a60; --sky:#eaf5ff; --yellow:#f7c847; --green:#23a76f; --ink:#10254a; }
+    * { box-sizing:border-box; }
+    body { margin:0; width:100%; min-height:calc(100 * min(var(--vh, 1vh), 1vh)); font-family:"DM Sans",sans-serif; color:var(--ink); overflow:hidden; }
+    .presentation-shell { width:100%; min-height:calc(100 * min(var(--vh, 1vh), 1vh)); background:#e7f2ff; display:flex; flex-direction:column; }
+    .topbar { height:62px; flex:none; display:flex; align-items:center; justify-content:space-between; padding:0 5vw; background:#fff; border-bottom:1px solid #d7e7fb; }
+    .brand-mark { width:34px; height:34px; display:grid; place-items:center; border-radius:10px; background:linear-gradient(135deg,#0868cf,#064696); color:#fff; }
+    .brand-name { font-weight:800; letter-spacing:.04em; color:#064696; }
+    .stage { flex:1; min-height:0; position:relative; overflow:hidden; }
+    .slide { position:absolute; inset:0; overflow-y:auto; padding:clamp(26px,5vw,64px) 9vw 80px; opacity:0; transform:translateX(4%); pointer-events:none; transition:opacity .42s ease,transform .42s ease; }
+    .slide.active { opacity:1; transform:translateX(0); pointer-events:auto; }
+    .slide-inner { max-width:1180px; margin:0 auto; min-height:100%; }
+    .eyebrow { display:inline-flex; gap:8px; align-items:center; font-size:.75rem; letter-spacing:.14em; text-transform:uppercase; font-weight:800; color:#0d63bd; }
+    .slide-title { font-family:"Fraunces",serif; font-size:clamp(2rem,4vw,3.8rem); line-height:1.05; letter-spacing:-.045em; margin:12px 0 18px; max-width:850px; }
+    .lead { font-size:clamp(1rem,1.5vw,1.22rem); color:#456182; max-width:780px; line-height:1.65; }
+    .grid-2 { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:24px; }
+    .grid-3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:18px; }
+    .card { background:#fff; border:1px solid #dceafb; border-radius:20px; padding:22px; box-shadow:0 12px 36px rgba(31,83,143,.08); }
+    .icon-box { width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:#e5f2ff;color:#0862bf;margin-bottom:15px; }
+    .card h3 { font-size:1.05rem; font-weight:800; margin:0 0 8px; color:#123565; }
+    .card p,.card li { color:#53708f; font-size:.92rem; line-height:1.55; }
+    .card ul { padding-left:18px; margin:8px 0 0; }
+    .cover { background:linear-gradient(125deg,#06295d 0%,#075cba 54%,#20a4d7 100%); color:#fff; }
+    .cover .slide-title { color:#fff; max-width:720px; }
+    .cover-grid { display:grid; grid-template-columns:1.15fr .85fr; gap:38px; align-items:center; min-height:calc(100 * min(var(--vh, 1vh), 1vh) - 190px); }
+    .cover .lead { color:#d5edff; max-width:670px; }
+    .pill { display:inline-flex; align-items:center; gap:8px; border-radius:999px; padding:8px 13px; font-size:.78rem; font-weight:700; }
+    .pill-light { background:rgba(255,255,255,.15); color:#fff; border:1px solid rgba(255,255,255,.24); }
+    .photo-wrap { position:relative; min-height:420px; }
+    .hero-photo { width:100%; height:420px; object-fit:cover; border-radius:30px; box-shadow:18px 18px 0 rgba(247,200,71,.9); }
+    .floating-doc { position:absolute; left:-26px; bottom:32px; background:#fff; color:#103767; width:190px; padding:16px; border-radius:16px; box-shadow:0 16px 34px rgba(4,32,75,.32); }
+    .floating-doc strong { display:block; font-size:.84rem; }
+    .floating-doc span { display:block;font-size:.7rem;color:#607b9d;margin-top:5px; }
+    .manual { background:#fff5e5; border-color:#ffdca1; }
+    .digital { background:#e9f9f3; border-color:#b8e9d2; }
+    .quote { margin-top:22px; padding:20px 24px; border-left:5px solid var(--yellow); background:#fff; border-radius:0 18px 18px 0; color:#155095; font-size:1.18rem; font-weight:700; }
+    .objective-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin-top:14px; }
+    .objective-list div { background:#f6faff; border-radius:12px; padding:11px 13px; color:#355d8d; font-size:.9rem; }
+    .app-window { overflow:hidden; border-radius:22px; border:1px solid #c9def7; background:#fff; box-shadow:0 20px 45px rgba(19,81,145,.12); }
+    .window-head { padding:12px 17px; background:#0a5eb6; color:#fff; display:flex; justify-content:space-between; font-size:.78rem; }
+    .mock-dashboard { display:grid; grid-template-columns:150px 1fr; min-height:285px; }
+    .sidebar { background:#f4f8fe; padding:18px 14px; font-size:.7rem; color:#547193; }
+    .sidebar span { display:block; padding:9px 8px; border-radius:7px; margin-bottom:4px; }
+    .sidebar span:first-child { color:#fff;background:#116cc9; }
+    .dash-content { padding:21px; }
+    .dash-stats { display:grid;grid-template-columns:repeat(3,1fr);gap:10px; }
+    .stat { padding:13px; border-radius:12px;background:#eff7ff;color:#456988;font-size:.68rem; }
+    .stat b { display:block;font-size:1.3rem;color:#0757b8;margin-top:5px; }
+    .progress-line { height:9px;border-radius:9px;background:#dceafb;overflow:hidden;margin:20px 0 14px; }
+    .progress-line b { display:block;width:72%;height:100%;background:linear-gradient(90deg,#0a60bd,#31b882); }
+    .process { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin-top:22px; }
+    .process-step { padding:11px 14px; border-radius:12px; background:#fff; border:1px solid #cfe3fb; color:#285989; font-size:.82rem; font-weight:700; }
+    .process-arrow { color:#0d66c3; font-weight:800; }
+    .role-card { border-top:5px solid #1475ce; }
+    .green-top { border-top-color:#27a975; }
+    .yellow-top { border-top-color:#f4bc2f; }
+    .flow-column { display:flex; flex-direction:column; gap:8px; }
+    .flow-node { border-radius:13px; padding:12px 15px; background:#fff; border:1px solid #cfe2f7; color:#1d5289; text-align:center; font-size:.88rem; font-weight:700; }
+    .flow-arrow { text-align:center;color:#1280c6;line-height:1; }
+    .tip { display:flex;gap:12px;align-items:flex-start;padding:13px;border-radius:14px;background:#fff;border:1px solid #d8e8f8; }
+    .tip b { width:28px;height:28px;flex:none;display:grid;place-items:center;border-radius:99px;background:#e5f3ff;color:#0a62bd;font-size:.78rem; }
+    .screenshot-space { border:2px dashed #8bb9e7; border-radius:18px; min-height:180px; display:grid; place-items:center; color:#477aa9; background:repeating-linear-gradient(45deg,#f5faff,#f5faff 10px,#eef7ff 10px,#eef7ff 20px); text-align:center; padding:18px; }
+    .student-photo { width:100%; height:250px; border-radius:22px; object-fit:cover; }
+    .bottom-nav { height:64px; flex:none; background:#fff; border-top:1px solid #d7e7fb; padding:0 5vw; display:flex;align-items:center;justify-content:space-between; }
+    .progress-track { height:5px; flex:1; max-width:260px; background:#dceafb; border-radius:9px; overflow:hidden; margin:0 18px; }
+    #progressBar { height:100%; background:linear-gradient(90deg,#0757b8,#24ab75); width:5.55%; transition:width .3s ease; }
+    .nav-btn { width:38px;height:38px;border-radius:12px;border:1px solid #cfe1f5;background:#fff;color:#0757b8;display:grid;place-items:center;cursor:pointer;transition:.2s; }
+    .nav-btn:hover,.nav-btn:focus-visible { background:#0757b8;color:#fff;outline:3px solid #b7ddff; }
+    .slide-dots { position:absolute; right:20px; top:50%; transform:translateY(-50%); display:flex; flex-direction:column; gap:7px; z-index:4; }
+    .slide-dot { width:7px;height:7px;border:0;border-radius:50%;background:#9cb9d6;cursor:pointer;padding:0; }
+    .slide-dot.active { height:20px;border-radius:8px;background:#0870cd; }
+    @media (max-width:760px) {
+      .topbar { padding:0 20px; } .topbar .sub-brand { display:none; }
+      .slide { padding:30px 30px 75px; } .cover-grid,.grid-2,.grid-3 { grid-template-columns:1fr; }
+      .cover-grid { min-height:auto; } .photo-wrap { min-height:280px; }.hero-photo { height:280px; }
+      .slide-dots { display:none; }.objective-list { grid-template-columns:1fr; }.mock-dashboard { grid-template-columns:95px 1fr; }
+      .sidebar { padding:12px 7px;font-size:.57rem; }.dash-content { padding:13px; }.bottom-nav { padding:0 20px; }
+    }
+  </style>
+  <script src="/_sdk/b3bf9e8ac58e6ad6.data_sdk.js" type="text/javascript" integrity="sha512-otc1u9NYq9Ms5Jt//7vmhrrqR5CLPr8Jdgs6741gqniClfLMcfmC+jK/cKuQdhLv6G0esJ/FzaMS9tv0T/vj/Q=="></script>
+  <script src="/_sdk/a27879be4562f807.resizing_sdk.js" type="text/javascript" integrity="sha512-trcxRwz+QLrzK0Dqg95xqVRryR7WtWui2YopXyzOIr3WMde3j/xCRgT63/b/EAg7klDsAOuHzoRgoryhwm8QFw=="></script>
+ </head>
+ <body data-template-id="__page-root" style="background: rgb(231, 242, 255);">
+  <div class="presentation-shell">
+   <header class="topbar">
+    <div class="flex items-center gap-3">
+     <div class="brand-mark">
+      <i data-lucide="graduation-cap" style="width:19px"></i>
+     </div>
+     <div>
+      <div data-template-id="brand-name" class="canva-text brand-name" style="color: rgb(6, 70, 150); font-weight: 800; font-style: normal; font-size: 16px;">SIPAGURU</div>
+      <div class="sub-brand text-xs text-slate-400">
+       Administrasi Guru &amp; E-Pembinaan
+      </div>
+     </div>
+    </div>
+    <div class="text-sm font-bold text-blue-900">
+     <span id="topSlide">01</span> <span class="text-slate-400 font-normal">/ 18</span>
+    </div>
+   </header>
+   <main class="stage" aria-live="polite">
+    <div class="slide-dots" id="slideDots" aria-label="Navigasi slide"></div>
+    <section class="slide cover active" aria-label="Slide 1: Cover">
+     <div class="slide-inner cover-grid">
+      <div>
+       <span data-template-id="cover-year" class="canva-tag pill pill-light" style="background: rgba(255, 255, 255, 0.15); color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 16px;">Tanjung Bintang, 27 Agustus 2026</span>
+       <h1 data-template-id="cover-title" class="canva-text slide-title" style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 32px;">SOSIALISASI APLIKASI SIPAGURU</h1>
+       <p data-template-id="cover-subtitle" class="canva-text text-xl font-semibold leading-relaxed" style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 20px;">Sistem Informasi dan Pengarsipan Administrasi Guru</p>
+       <p data-template-id="cover-integration" class="canva-text mt-3 text-lg text-yellow-200 font-bold" style="color: rgb(253, 230, 138); font-weight: 700; font-style: normal; font-size: 18px;">Terintegrasi dengan E-Pembinaan Siswa</p>
+       <p data-template-id="cover-tagline" class="canva-text lead mt-4" style="color: rgb(213, 237, 255); font-weight: 400; font-style: normal; font-size: 16px;">Digitalisasi Administrasi Guru, Tertib Arsip, dan Pembinaan Siswa yang Terukur</p>
+       
+       <!-- Identitas Pemateri & Logo Sahabat Belajar -->
+       <div class="mt-6 p-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 flex items-center gap-4 max-w-lg">
+        <img src="sahabat belajar.jpg" alt="Logo Sahabat Belajar" class="w-14 h-14 rounded-full bg-white p-1 object-contain flex-shrink-0 shadow-md">
+        <div>
+         <span class="text-xs uppercase tracking-wider text-yellow-300 font-bold block">Pemateri:</span>
+         <h4 class="text-base font-extrabold text-white leading-tight">Watono, S.Pd</h4>
+         <p class="text-xs text-blue-100 mt-0.5">Tim Pengembang SAHABAT BELAJAR</p>
+        </div>
+       </div>
+      </div>
+      
+      <div class="photo-wrap">
+       <img data-template-id="cover-hero-image" class="canva-image hero-photo" loading="lazy" src="belajar.png">
+       <div class="floating-doc"><i data-lucide="file-check-2" style="width:22px;color:#14a36f"></i> <strong>Administrasi tertata</strong> <span>Dokumen aman &amp; mudah dipantau</span>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="slide" aria-label="Slide 2: Latar Belakang">
+     <div class="slide-inner">
+      <div class="eyebrow">
+       <i data-lucide="circle-alert" style="width:15px"></i> Tantangan saat ini
+      </div>
+      <h2 data-template-id="s2-title" class="canva-text slide-title" style="color: rgb(16, 37, 74); font-weight: 700; font-style: normal; font-size: 24px;">Administrasi adalah fondasi profesionalitas guru.</h2>
+      <p class="lead">Namun, pengelolaan dokumen dan data pembinaan yang masih manual dapat membuat proses kerja sekolah menjadi lebih lambat dan sulit ditelusuri.</p>
+      <div class="grid-2 mt-8">
+       <article class="card manual">
+        <div class="icon-box" style="background:#fff0d5;color:#bd7b00">
+         <i data-lucide="files" style="width:23px"></i>
+        </div>
+        <h3>Pengelolaan Manual</h3>
+        <ul>
+         <li>Dokumen tersimpan secara terpisah dan mudah tercecer.</li>
+         <li>Pencarian berkas membutuhkan waktu lebih lama.</li>
+         <li>Pemantauan kelengkapan belum terpusat.</li>
+         <li>Pelanggaran siswa sering dicatat secara manual.</li>
+        </ul>
+       </article>
+       <article class="card digital">
+        <div class="icon-box" style="background:#d9f5e8;color:#138758">
+         <i data-lucide="cloud-cog" style="width:23px"></i>
+        </div>
+        <h3>Sistem Digital Terintegrasi</h3>
+        <ul>
+         <li>Arsip guru tersimpan rapi pada satu pusat informasi.</li>
+         <li>Riwayat dokumen dan pembinaan mudah ditelusuri.</li>
+         <li>Monitoring kelengkapan dapat dilakukan lebih cepat.</li>
+         <li>Data pelanggaran terdokumentasi sistematis.</li>
+        </ul>
+       </article>
+      </div>
+     </div>
+    </section>
+    <section class="slide" aria-label="Slide 3: Mengapa SIPAGURU Hadir">
+     <div class="slide-inner">
+      <div class="eyebrow">
+       <i data-lucide="lightbulb" style="width:15px"></i> Solusi sekolah digital
+      </div>
+      <h2 data-template-id="s3-title" class="canva-text slide-title" style="color: rgb(16, 37, 74); font-weight: 700; font-style: normal; font-size: 24px;">Mengapa SIPAGURU hadir?</h2>
+      <div class="grid-3 mt-7">
+       <article class="card">
+        <div class="icon-box">
+         <i data-lucide="folder-kanban"></i>
+        </div>
+        <h3>Menata</h3>
+        <p>Administrasi guru dalam sistem yang tertib dan mudah diakses.</p>
+       </article>
+       <article class="card">
+        <div class="icon-box">
+         <i data-lucide="upload-cloud"></i>
+        </div>
+        <h3>Menyimpan</h3>
+        <p>Dokumen digital dan riwayat administrasi secara lebih aman.</p>
+       </article>
+       <article class="card">
+        <div class="icon-box">
+         <i data-lucide="chart-no-axes-combined"></i>
+        </div>
+        <h3>Memantau</h3>
+        <p>Kelengkapan, verifikasi, serta perkembangan administrasi.</p>
+       </article>
+       <article class="card">
+        <div class="icon-box">
+         <i data-lucide="search-check"></i>
+        </div>
+        <h3>Mencari</h3>
+        <p>Dokumen yang diperlukan secara cepat tanpa mencari arsip fisik.</p>
+       </article>
+       <article class="card">
+        <div class="icon-box">
+         <i data-lucide="shield-check"></i>
+        </div>
+        <h3>Mengawasi</h3>
+        <p>Proses verifikasi administrasi dengan lebih terarah.</p>
+       </article>
+       <article class="card">
+        <div class="icon-box">
+         <i data-lucide="users-round"></i>
+        </div>
+        <h3>Membina</h3>
+        <p>Pencatatan pelanggaran dan pembinaan siswa yang terintegrasi.</p>
+       </article>
+      </div>
+      <blockquote data-template-id="s3-quote" class="canva-text quote" style="background: rgb(255, 255, 255); color: rgb(21, 80, 149); font-weight: 700; font-style: normal; font-size: 19px;">“Dari administrasi yang tersebar menuju pengelolaan digital yang lebih tertib, cepat, dan terukur.”</blockquote>
+     </div>
+    </section>
+    <section class="slide" aria-label="Slide 4: Maksud dan Tujuan">
+     <div class="slide-inner">
+      <div class="eyebrow">
+       <i data-lucide="target" style="width:15px"></i> Arah penerapan
+      </div>
+      <h2 data-template-id="s4-title" class="canva-text slide-title" style="color: rgb(16, 37, 74); font-weight: 700; font-style: normal; font-size: 24px;">Maksud dan tujuan penerapan SIPAGURU</h2>
+      <div class="grid-2 mt-7">
+       <article class="card" style="background:#0757b8;color:#fff;border:none">
+        <div class="icon-box" style="background:#ffffff22;color:#ffe174">
+         <i data-lucide="compass"></i>
+        </div>
+        <h3 class="text-white">Maksud</h3>
+        <p class="text-blue-100">Membantu sekolah melakukan digitalisasi pengelolaan dan pengarsipan administrasi guru, sekaligus mendukung pembinaan siswa yang lebih efektif.</p>
+       </article>
+       <article class="card">
+        <div class="icon-box">
+         <i data-lucide="list-checks"></i>
+        </div>
+        <h3>Tujuan</h3>
+        <div class="objective-list">
+         <div>
+          Mempermudah unggah administrasi
+         </div>
+         <div>
+          Penyimpanan dokumen terpusat
+         </div>
+         <div>
+          Memantau kelengkapan dokumen
+         </div>
+         <div>
+          Memudahkan verifikasi
+         </div>
+         <div>
+          Melihat riwayat unggahan
+         </div>
+         <div>
+          Meningkatkan ketertiban arsip
+         </div>
+         <div>
+          Mencatat pelanggaran siswa
+         </div>
+         <div>
+          Mendukung pembinaan berbasis poin
+         </div>
+        </div>
+       </article>
+      </div>
+     </div>
+    </section>
+    <section class="slide" aria-label="Slide 5: Mengenal SIPAGURU">
+     <div class="slide-inner">
+      <div class="eyebrow">
+       <i data-lucide="monitor-smartphone" style="width:15px"></i> Satu pusat digital
+      </div>
+      <h2 data-template-id="s5-title" class="canva-text slide-title" style="color: rgb(16, 37, 74); font-weight: 700; font-style: normal; font-size: 24px;">Mengenal aplikasi SIPAGURU</h2>
+      <div class="grid-2 mt-7 items-center">
+       <div>
+        <p class="lead"><b>SIPAGURU</b> merupakan singkatan dari <b>Sistem Informasi dan Pengarsipan Administrasi Guru</b>: media digital agar guru mengelola administrasi secara lebih practical.</p>
+        <div data-template-id="s5-statement" class="canva-banner mt-6 rounded-2xl bg-yellow-100 p-5 text-blue-900 font-bold text-lg" style="background: rgb(254, 243, 199); color: rgb(16, 37, 74); font-weight: 700; font-style: normal; font-size: 18px;">Satu akun — satu guru — satu pusat administrasi digital.</div>
+        <div class="flex flex-wrap gap-2 mt-6"><span class="pill bg-blue-50 text-blue-800">Dashboard</span><span class="pill bg-blue-50 text-blue-800">Profil Saya</span><span class="pill bg-blue-50 text-blue-800">Upload Administrasi</span><span class="pill bg-blue-50 text-blue-800">Riwayat Upload</span><span class="pill bg-green-50 text-green-800">E-Pembinaan Siswa</span><span class="pill bg-slate-100 text-slate-700">Kasus Dilimpahkan</span>
+        </div>
+       </div>
+       <div class="app-window">
+        <div class="window-head">
+         <span>SIPAGURU</span><span>Guru Dashboard</span>
+        </div>
+        <div class="mock-dashboard">
+         <aside class="sidebar">
+          <span>Dashboard</span><span>Profil Saya</span><span>Upload</span><span>Riwayat</span><span>E-Pembinaan</span>
+         </aside>
+         <div class="dash-content"><b class="text-blue-950">Selamat datang, Guru</b>
+          <div class="dash-stats mt-4">
+           <div class="stat">
+            Dokumen<b>12</b>
+           </div>
+           <div class="stat">
+            Lengkap<b>72%</b>
+           </div>
+           <div class="stat">
+            Menunggu<b>3</b>
+           </div>
+          </div>
+          <div class="progress-line">
+           <b></b>
+          </div><span class="text-xs text-slate-500">Progress administrasi semester ini</span>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="slide" aria-label="Slide 6: Dashboard SIPAGURU">
+     <div class="slide-inner">
+      <div class="eyebrow">
+       <i data-lucide="layout-dashboard" style="width:15px"></i> Pusat informasi pengguna
+      </div>
+      <h2 data-template-id="s6-title" class="canva-text slide-title" style="color: rgb(16, 37, 74); font-weight: 700; font-style: normal; font-size: 24px;">Dashboard membantu guru melihat kondisi administrasi secara cepat.</h2>
+      <div class="grid-2 mt-7 items-center">
+       <div class="app-window">
+        <div class="window-head">
+         <span>Dashboard SIPAGURU</span><span>Ringkasan</span>
+        </div>
+        <div class="mock-dashboard">
+         <aside class="sidebar">
+          <span>Dashboard</span><span>Profil Saya</span><span>Upload</span><span>Riwayat</span>
+         </aside>
+         <div class="dash-content">
+          <div class="dash-stats">
+           <div class="stat">
+            Total Unggahan<b>12</b>
+           </div>
+           <div class="stat">
+            Progress<b>72%</b>
+           </div>
+           <div class="stat">
+            Perlu Lengkap<b>3</b>
+           </div>
+          </div>
+          <div class="progress-line">
+           <b></b>
+          </div>
+          <div class="p-3 rounded-xl bg-blue-50 text-xs text-blue-800">
+           Kewajiban dokumen: Modul Ajar, PROTA, PROMES, dan dokumen pendukung.
+          </div>
+         </div>
+        </div>
+       </div>
+       <div class="grid gap-3">
+        <div class="tip">
+         <b>01</b><span><strong>Total administrasi</strong><br><small>Melihat berkas yang telah dimiliki atau diunggah.</small></span>
+        </div>
+        <div class="tip">
+         <b>02</b><span><strong>Progress pemenuhan</strong><br><small>Mengetahui tingkat kelengkapan administrasi.</small></span>
+        </div>
+        <div class="tip">
+         <b>03</b><span><strong>Daftar kewajiban</strong><br><small>Mengingatkan dokumen yang perlu dilengkapi.</small></span>
+        </div>
+        <div class="tip">
+         <b>04</b><span><strong>Informasi perkembangan</strong><br><small>Memberikan gambaran kondisi administrasi saat ini.</small></span>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="slide" aria-label="Slide 7: Profil Saya">
+     <div class="slide-inner">
+      <div class="eyebrow">
+       <i data-lucide="badge-check" style="width:15px"></i> Identitas pengguna
+      </div>
+      <h2 data-template-id="s7-title" class="canva-text slide-title" style="color: rgb(16, 37, 74); font-weight: 700; font-style: normal; font-size: 24px;">Menu Profil Saya</h2>
+      <div class="grid-2 mt-7 items-center">
+       <article class="card bg-blue-50">
+        <div class="flex items-center gap-4">
+         <div class="w-16 h-16 rounded-full bg-blue-700 text-white grid place-items-center text-2xl font-bold">
+          G
+         </div>
+         <div>
+          <h3 class="mb-1">Profil Guru</h3>
+          <p class="m-0">Identitas akun di dalam sistem</p>
+         </div>
+        </div>
+        <div class="mt-6 space-y-3 text-sm text-slate-600">
+         <div class="bg-white p-3 rounded-xl">
+          Nama pengguna dan identitas guru
+         </div>
+         <div class="bg-white p-3 rounded-xl">
+          Informasi akun yang dapat diperiksa
+         </div>
+         <div class="bg-white p-3 rounded-xl">
+          Data tertentu dapat diperbarui bila diperlukan
+         </div>
+        </div>
+       </article>
+       <div>
+        <h3 class="text-xl text-blue-950 font-extrabold">Fungsi utama</h3>
+        <div class="grid gap-3 mt-4">
+         <div class="tip">
+          <b><i data-lucide="user-round" style="width:15px"></i></b><span>Melihat dan memastikan data identitas pengguna sudah benar.</span>
+         </div>
+         <div class="tip">
+          <b><i data-lucide="key-round" style="width:15px"></i></b><span>Menjadi identitas pengguna dalam sistem yang terarah.</span>
+         </div>
+         <div class="tip">
+          <b><i data-lucide="lock-keyhole" style="width:15px"></i></b><span>Setiap guru memiliki akun serta akses masing-masing.</span>
+         </div>
+        </div>
+        <p data-template-id="s7-note" class="canva-text mt-6 p-4 rounded-xl bg-yellow-100 text-blue-950 font-bold" style="background: rgb(254, 243, 199); color: rgb(16, 37, 74); font-weight: 700; font-style: normal; font-size: 16px;">Data yang tepat membantu layanan administrasi berjalan lebih akurat.</p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="slide" aria-label="Slide 8: Upload Administrasi">
+     <div class="slide-inner">
+      <div class="eyebrow">
+       <i data-lucide="upload" style="width:15px"></i> Pengarsipan digital
+      </div>
+      <h2 data-template-id="s8-title" class="canva-text slide-title" style="color: rgb(16, 37, 74); font-weight: 700; font-style: normal; font-size: 24px;">Menu Upload Administrasi</h2>
+      <div class="grid-2 mt-6">
+       <div>
+        <p class="lead">Digunakan untuk mengunggah dokumen administrasi guru ke dalam sistem.</p>
+        <div class="flex flex-wrap gap-2 mt-5"><span class="pill bg-blue-50 text-blue-800">Modul Ajar</span><span class="pill bg-blue-50 text-blue-800">PROTA</span><span class="pill bg-blue-50 text-blue-800">PROMES</span><span class="pill bg-blue-50 text-blue-800">Administrasi Pembelajaran</span><span class="pill bg-blue-50 text-blue-800">Dokumen Pendukung</span>
+        </div>
+        <div class="screenshot-space mt-6">
+         <div>
+          <i data-lucide="image" style="width:30px"></i><br><b>Ruang screenshot aplikasi</b><br><small>Masukkan tampilan menu Upload Administrasi di sini</small>
+         </div>
+        </div>
+       </div>
+       <article class="card">
+        <h3>Alur unggah dokumen</h3>
+        <div class="process flex-col items-stretch gap-2">
+         <div class="process-step">
+          1. Login ke aplikasi SIPAGURU
+         </div>
+         <div class="process-arrow">
+          ↓
+         </div>
+         <div class="process-step">
+          2. Pilih menu Upload Administrasi
+         </div>
+         <div class="process-arrow">
+          ↓
+         </div>
+         <div class="process-step">
+          3. Pilih kategori dan file dokumen
+         </div>
+         <div class="process-arrow">
+          ↓
+         </div>
+         <div class="process-step">
+          4. Periksa data lalu klik unggah / simpan
+         </div>
+         <div class="process-arrow">
+          ↓
+         </div>
+         <div class="process-step bg-green-50 border-green-200 text-green-800">
+          5. Dokumen berhasil tersimpan
+         </div>
+        </div>
+       </article>
+      </div>
+     </div>
+    </section>
+    <section class="slide" aria-label="Slide 9: Riwayat Upload">
+     <div class="slide-inner">
+      <div class="eyebrow">
+       <i data-lucide="history" style="width:15px"></i> Jejak digital dokumen
+      </div>
+      <h2 data-template-id="s9-title" class="canva-text slide-title" style="color: rgb(16, 37, 74); font-weight: 700; font-style: normal; font-size: 24px;">Menu Riwayat Upload</h2>
+      <div class="grid-2 mt-7 items-center">
+       <div class="app-window">
+        <div class="window-head">
+         <span>Riwayat Upload</span><span>12 Dokumen</span>
+        </div>
+        <div class="p-5 space-y-3">
+         <div class="flex justify-between items-center p-3 bg-slate-50 rounded-xl text-sm">
+          <span>Modul Ajar Semester 1</span><span class="text-green-600 font-bold">Tersimpan</span>
+         </div>
+         <div class="flex justify-between items-center p-3 bg-slate-50 rounded-xl text-sm">
+          <span>Program Tahunan</span><span class="text-blue-600 font-bold">Terverifikasi</span>
+         </div>
+         <div class="flex justify-between items-center p-3 bg-slate-50 rounded-xl text-sm">
+          <span>Program Semester</span><span class="text-amber-600 font-bold">Ditinjau</span>
+         </div>
+        </div>
+       </div>
+       <div class="grid gap-3">
+        <div class="tip">
+         <b>01</b><span>Melihat dokumen yang pernah diunggah.</span>
+        </div>
+        <div class="tip">
+         <b>02</b><span>Mengetahui riwayat dan status dokumen.</span>
+        </div>
+        <div class="tip">
+         <b>03</b><span>Memudahkan pencarian kembali ketika dibutuhkan.</span>
+        </div>
+        <div class="tip">
+         <b>04</b><span>Menjadi bukti bahwa administrasi pernah diunggah.</span>
+        </div>
+        <p data-template-id="s9-note" class="canva-text mt-2 p-4 rounded-xl bg-blue-700 text-white font-bold" style="background: rgb(7, 87, 184); color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 16px;">Dokumen tidak hanya diunggah, tetapi memiliki jejak digital yang dapat ditelusuri.</p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="slide" aria-label="Slide 10: Manfaat SIPAGURU">
+     <div class="slide-inner">
+      <div class="eyebrow">
+       <i data-lucide="circle-check-big" style="width:15px"></i> Nilai tambah
+      </div>
+      <h2 data-template-id="s10-title" class="canva-text slide-title" style="color: rgb(16, 37, 74); font-weight: 700; font-style: normal; font-size: 24px;">Manfaat dan kegunaan SIPAGURU</h2>
+      <div class="grid-2 mt-7">
+       <article class="card role-card">
+        <h3>Bagi Guru</h3>
+        <p>Administrasi lebih tertata, mudah diunggah, mudah ditemukan, dan kelengkapan dapat dipantau.</p>
+       </article>
+       <article class="card role-card green-top">
+        <h3>Bagi Verifikator</h3>
+        <p>Pengecekan, verifikasi, dan pemantauan pemenuhan administrasi menjadi lebih efisien.</p>
+       </article>
+       <article class="card role-card yellow-top">
+        <h3>Bagi Kepala Sekolah</h3>
+        <p>Mendukung supervisi, pemantauan administrasi, dan pengambilan keputusan berdasarkan data.</p>
+       </article>
+       <article class="card role-card">
+        <h3>Bagi Sekolah</h3>
+        <p>Arsip lebih tertib, risiko dokumen hilang berkurang, dan transformasi digital semakin kuat.</p>
+       </article>
+      </div>
+     </div>
+    </section>
+    <section class="slide" aria-label="Slide 11: E-Pembinaan Siswa">
+     <div class="slide-inner">
+      <div class="eyebrow">
+       <i data-lucide="heart-handshake" style="width:15px"></i> Terintegrasi dalam SIPAGURU
+      </div>
+      <h2 data-template-id="s11-title" class="canva-text slide-title" style="color: rgb(16, 37, 74); font-weight: 700; font-style: normal; font-size: 24px;">Pengenalan E-Pembinaan Siswa</h2>
+      <div class="grid-2 mt-6 items-center">
+       <div>
+        <p class="lead">Fitur digital untuk membantu sekolah melakukan pencatatan pelanggaran dan proses pembinaan siswa secara lebih terstruktur.</p>
+        <div class="grid grid-cols-2 gap-3 mt-6">
+         <div class="tip">
+          <b>✓</b><span>Pencatatan pelanggaran</span>
+         </div>
+         <div class="tip">
+          <b>✓</b><span>Pemberian sistem poin</span>
+         </div>
+         <div class="tip">
+          <b>✓</b><span>Riwayat pelanggaran</span>
+         </div>
+         <div class="tip">
+          <b>✓</b><span>Pemantauan perkembangan</span>
+         </div>
+         <div class="tip">
+          <b>✓</b><span>Dokumentasi tindak lanjut</span>
+         </div>
+         <div class="tip">
+          <b>✓</b><span>Pelimpahan kasus</span>
+         </div>
+        </div>
+       </div>
+       <div><img data-template-id="student-counseling-image" class="canva-image student-photo" loading="lazy" src="prestasi.jpeg.">
+        <p data-template-id="s11-message" class="canva-text mt-4 p-5 bg-green-50 rounded-2xl text-green-900 font-bold" style="background: rgb(236, 253, 245); color: rgb(20, 83, 45); font-weight: 700; font-style: normal; font-size: 16px;">E-Pembinaan bukan sekadar mencatat pelanggaran, tetapi membantu pembinaan yang lebih terukur, adil, dan berkelanjutan.</p>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="slide" aria-label="Slide 12: Mengapa E-Pembinaan Diperlukan">
+     <div class="slide-inner">
+      <div class="eyebrow">
+       <i data-lucide="git-compare" style="width:15px"></i> Dari data ke tindakan
+      </div>
+      <h2 data-template-id="s12-title" class="canva-text slide-title" style="color: rgb(16, 37, 74); font-weight: 700; font-style: normal; font-size: 24px;">Mengapa E-Pembinaan Siswa diperlukan?</h2>
+      <div class="grid-2 mt-7">
+       <article class="card manual">
+        <h3>Masalah pada sistem manual</h3>
+        <ul>
+         <li>Data pelanggaran mudah tercecer.</li>
+         <li>Pencatatan belum terpusat.</li>
+         <li>Riwayat siswa sulit diketahui.</li>
+         <li>Poin sulit dipantau secara konsisten.</li>
+         <li>Proses pembinaan kurang terdokumentasi.</li>
+        </ul>
+       </article>
+       <article class="card digital">
+        <h3>Solusi E-Pembinaan</h3>
+        <div class="process">
+         <span class="process-step">Pelanggaran Dicatat</span><span class="process-arrow">→</span><span class="process-step">Poin Diberikan</span><span class="process-arrow">→</span><span class="process-step">Data Tersimpan</span><span class="process-arrow">→</span><span class="process-step">Riwayat Dipantau</span><span class="process-arrow">→</span><span class="process-step">Siswa Dibina</span>
+        </div>
+       </article>
+      </div>
+     </div>
+    </section>
+    <section class="slide" aria-label="Slide 13: Langkah E-Pembinaan">
+     <div class="slide-inner">
+      <div class="eyebrow">
+       <i data-lucide="route" style="width:15px"></i> Panduan penggunaan
+      </div>
+      <h2 data-template-id="s13-title" class="canva-text slide-title" style="color: rgb(16, 37, 74); font-weight: 700; font-style: normal; font-size: 24px;">Langkah-langkah penggunaan E-Pembinaan Siswa</h2>
+      <div class="grid-2 mt-6">
+       <div class="grid gap-2">
+        <div class="tip">
+         <b>1</b><span><strong>Masuk menu E-Pembinaan</strong><br><small>Pilih menu pada sidebar aplikasi.</small></span>
+        </div>
+        <div class="tip">
+         <b>2</b><span><strong>Pilih atau cari data siswa</strong><br><small>Cari berdasarkan data yang tersedia.</small></span>
+        </div>
+        <div class="tip">
+         <b>3</b><span><strong>Catat jenis pelanggaran</strong><br><small>Pilih kategori sesuai ketentuan sekolah.</small></span>
+        </div>
+        <div class="tip">
+         <b>4</b><span><strong>Input poin dan keterangan</strong><br><small>Tambahkan kronologi atau informasi pendukung.</small></span>
+        </div>
+       </div>
+       <div class="grid gap-2">
+        <div class="tip">
+         <b>5</b><span><strong>Simpan data</strong><br><small>Data menjadi riwayat digital siswa.</small></span>
+        </div>
+        <div class="tip">
+         <b>6</b><span><strong>Lakukan pembinaan</strong><br><small>Sesuai tingkat dan ketentuan sekolah.</small></span>
+        </div>
+        <div class="tip">
+         <b>7</b><span><strong>Pantau perkembangan</strong><br><small>Riwayat membantu menentukan tindak lanjut.</small></span>
+        </div>
+        <div class="screenshot-space">
+         <div>
+          <i data-lucide="monitor-up" style="width:26px"></i><br><b>Ruang screenshot E-Pembinaan</b>
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="slide" aria-label="Slide 14: Kasus Dilimpahkan">
+     <div class="slide-inner">
+      <div class="eyebrow">
+       <i data-lucide="forward" style="width:15px"></i> Koordinasi penanganan
+      </div>
+      <h2 data-template-id="s14-title" class="canva-text slide-title" style="color: rgb(16, 37, 74); font-weight: 700; font-style: normal; font-size: 24px;">Kasus Dilimpahkan</h2>
+      <p class="lead">Sarana untuk menangani kasus yang membutuhkan tindak lanjut lebih lanjut oleh petugas berwenang.</p>
+      <div class="process mt-8 justify-center"><span class="process-step">Guru / Petugas Mencatat</span><span class="process-arrow">→</span><span class="process-step">Perlu Tindak Lanjut</span><span class="process-arrow">→</span><span class="process-step bg-yellow-50">Dilimpahkan</span><span class="process-arrow">→</span><span class="process-step">Ditangani Petugas Berwenang</span><span class="process-arrow">→</span><span class="process-step bg-green-50">Pembinaan &amp; Status Dipantau</span>
+      </div>
+      <div class="grid-3 mt-10">
+       <article class="card">
+        <div class="icon-box">
+         <i data-lucide="circle-dot-dashed"></i>
+        </div>
+        <h3>Kasus tidak berhenti</h3>
+        <p>Pencatatan menjadi awal dari proses penanganan yang jelas.</p>
+       </article>
+       <article class="card">
+        <div class="icon-box">
+         <i data-lucide="messages-square"></i>
+        </div>
+        <h3>Koordinasi lebih mudah</h3>
+        <p>Informasi penanganan dapat diteruskan sesuai kewenangan.</p>
+       </article>
+       <article class="card">
+        <div class="icon-box">
+         <i data-lucide="clipboard-check"></i>
+        </div>
+        <h3>Proses terdokumentasi</h3>
+        <p>Tindak lanjut dan perkembangan status dapat dipantau.</p>
+       </article>
+      </div>
+     </div>
+    </section>
+    <section class="slide" aria-label="Slide 15: Alur Terintegrasi">
+     <div class="slide-inner">
+      <div class="eyebrow">
+       <i data-lucide="workflow" style="width:15px"></i> Dua layanan, satu ekosistem
+      </div>
+      <h2 data-template-id="s15-title" class="canva-text slide-title" style="color: rgb(16, 37, 74); font-weight: 700; font-style: normal; font-size: 24px;">Contoh alur penggunaan terintegrasi</h2>
+      <div class="grid-2 mt-7">
+       <article class="card bg-blue-50">
+        <h3 class="text-blue-800">ADMINISTRASI GURU</h3>
+        <div class="flow-column mt-5">
+         <div class="flow-node">
+          Guru Login
+         </div>
+         <div class="flow-arrow">
+          ↓
+         </div>
+         <div class="flow-node">
+          Dashboard
+         </div>
+         <div class="flow-arrow">
+          ↓
+         </div>
+         <div class="flow-node">
+          Upload Administrasi
+         </div>
+         <div class="flow-arrow">
+          ↓
+         </div>
+         <div class="flow-node">
+          Dokumen Tersimpan
+         </div>
+         <div class="flow-arrow">
+          ↓
+         </div>
+         <div class="flow-node">
+          Riwayat Upload
+         </div>
+         <div class="flow-arrow">
+          ↓
+         </div>
+         <div class="flow-node bg-blue-100">
+          Verifikasi &amp; Pemantauan
+         </div>
+        </div>
+       </article>
+       <article class="card bg-green-50">
+        <h3 class="text-green-800">E-PEMBINAAN SISWA</h3>
+        <div class="flow-column mt-5">
+         <div class="flow-node">
+          Petugas Login
+         </div>
+         <div class="flow-arrow">
+          ↓
+         </div>
+         <div class="flow-node">
+          Pilih Siswa
+         </div>
+         <div class="flow-arrow">
+          ↓
+         </div>
+         <div class="flow-node">
+          Catat Pelanggaran
+         </div>
+         <div class="flow-arrow">
+          ↓
+         </div>
+         <div class="flow-node">
+          Sistem Poin
+         </div>
+         <div class="flow-arrow">
+          ↓
+         </div>
+         <div class="flow-node">
+          Pembinaan
+         </div>
+         <div class="flow-arrow">
+          ↓
+         </div>
+         <div class="flow-node bg-green-100">
+          Pemantauan / Pelimpahan
+         </div>
+        </div>
+       </article>
+      </div>
+     </div>
+    </section>
+    <section class="slide" aria-label="Slide 16: Peran Pengguna">
+     <div class="slide-inner">
+      <div class="eyebrow">
+       <i data-lucide="users" style="width:15px"></i> Kolaborasi pengguna
+      </div>
+      <h2 data-template-id="s16-title" class="canva-text slide-title" style="color: rgb(16, 37, 74); font-weight: 700; font-style: normal; font-size: 24px;">Peran pengguna dalam SIPAGURU</h2>
+      <div class="grid-3 mt-8">
+       <article class="card role-card">
+        <div class="icon-box">
+         <i data-lucide="graduation-cap"></i>
+        </div>
+        <h3>Guru</h3>
+        <ul>
+         <li>Mengelola administrasi pribadi.</li>
+         <li>Mengunggah dokumen.</li>
+         <li>Melihat riwayat dokumen.</li>
+         <li>Membantu pembinaan sesuai kewenangan.</li>
+        </ul>
+       </article>
+       <article class="card role-card green-top">
+        <div class="icon-box" style="background:#dcf6e8;color:#198758">
+         <i data-lucide="check-check"></i>
+        </div>
+        <h3>Verifikator</h3>
+        <ul>
+         <li>Memeriksa dokumen.</li>
+         <li>Melakukan verifikasi.</li>
+         <li>Memantau kelengkapan administrasi.</li>
+        </ul>
+       </article>
+       <article class="card role-card yellow-top">
+        <div class="icon-box" style="background:#fff3cf;color:#ac7500">
+         <i data-lucide="landmark"></i>
+        </div>
+        <h3>Kepala Sekolah</h3>
+        <ul>
+         <li>Memantau pelaksanaan administrasi.</li>
+         <li>Melihat perkembangan umum.</li>
+         <li>Mendukung evaluasi dan pengawasan.</li>
+        </ul>
+       </article>
+      </div>
+     </div>
+    </section>
+    <section class="slide" aria-label="Slide 17: Tips Penggunaan">
+     <div class="slide-inner">
+      <div class="eyebrow">
+       <i data-lucide="circle-help" style="width:15px"></i> Praktik terbaik
+      </div>
+      <h2 data-template-id="s17-title" class="canva-text slide-title" style="color: rgb(16, 37, 74); font-weight: 700; font-style: normal; font-size: 24px;">Tips agar penggunaan aplikasi berhasil</h2>
+      <div class="grid-2 mt-6">
+       <div class="grid gap-2">
+        <div class="tip">
+         <b>01</b><span>Gunakan akun masing-masing dan pastikan profil benar.</span>
+        </div>
+        <div class="tip">
+         <b>02</b><span>Siapkan dokumen sebelum diunggah.</span>
+        </div>
+        <div class="tip">
+         <b>03</b><span>Gunakan nama file yang jelas dan mudah dicari.</span>
+        </div>
+        <div class="tip">
+         <b>04</b><span>Periksa dokumen sebelum mengunggah.</span>
+        </div>
+        <div class="tip">
+         <b>05</b><span>Lakukan pembaruan administrasi secara berkala.</span>
+        </div>
+       </div>
+       <div class="grid gap-2">
+        <div class="tip">
+         <b>06</b><span>Catat pelanggaran berdasarkan fakta dan data.</span>
+        </div>
+        <div class="tip">
+         <b>07</b><span>Gunakan sistem poin sesuai aturan sekolah.</span>
+        </div>
+        <div class="tip">
+         <b>08</b><span>Utamakan pembinaan dan perbaikan perilaku siswa.</span>
+        </div>
+        <div class="tip">
+         <b>09</b><span>Gunakan data aplikasi secara bertanggung jawab.</span>
+        </div>
+        <div class="p-5 rounded-2xl bg-blue-700 text-white font-bold">
+         Konsistensi penggunaan adalah kunci terciptanya data sekolah yang tertib dan bermanfaat.
+        </div>
+       </div>
+      </div>
+     </div>
+    </section>
+    <section class="slide cover" aria-label="Slide 18: Penutup">
+     <div class="slide-inner flex flex-col justify-center min-h-full max-w-4xl">
+      <div class="eyebrow text-yellow-200">
+       <i data-lucide="rocket" style="width:15px"></i> Penutup
+      </div>
+      <h2 data-template-id="s18-title" class="canva-text slide-title mt-4" style="color: rgb(255, 255, 255); font-weight: 700; font-style: normal; font-size: 24px;">SIPAGURU bukan sekadar aplikasi penyimpanan dokumen.</h2>
+      <p data-template-id="s18-message" class="canva-text lead text-blue-100" style="color: rgb(213, 237, 255); font-weight: 400; font-style: normal; font-size: 18px;">SIPAGURU adalah langkah bersama menuju administrasi guru yang lebih tertib, pengarsipan yang lebih aman, pemantauan yang lebih mudah, serta pembinaan siswa yang lebih terukur.</p>
+      <div class="flex flex-wrap gap-3 mt-8"><span class="pill pill-light">TERTIB ADMINISTRASI</span><span class="pill pill-light">MUDAH DIAKSES</span><span class="pill pill-light">AMAN TERSIMPAN</span><span class="pill pill-light">CEPAT DIPANTAU</span><span class="pill pill-light">BAIK DALAM PEMBINAAN</span>
+      </div>
+      <div class="mt-12 border-t border-white/25 pt-7">
+       <h3 data-template-id="s18-thanks" class="canva-text text-4xl md:text-5xl font-bold text-yellow-200" style="color: rgb(253, 230, 138); font-weight: 700; font-style: normal; font-size: 42px;">TERIMA KASIH</h3>
+       <p data-template-id="s18-closing" class="canva-text text-lg text-white mt-3" style="color: rgb(255, 255, 255); font-weight: 400; font-style: normal; font-size: 18px;">Mari Bersama Mewujudkan Sekolah yang Lebih Tertib, Modern, dan Berbasis Digital.</p>
+      </div>
+     </div>
+    </section>
+   </main>
+   <footer class="bottom-nav"><button id="prevBtn" class="nav-btn" type="button" aria-label="Slide sebelumnya"><i data-lucide="arrow-left" style="width:18px"></i></button>
+    <div class="progress-track" aria-hidden="true">
+     <div id="progressBar"></div>
+    </div><span id="bottomSlide" class="text-xs font-bold text-slate-500">SLIDE 01</span> <button id="nextBtn" class="nav-btn ml-4" type="button" aria-label="Slide berikutnya"><i data-lucide="arrow-right" style="width:18px"></i></button>
+   </footer>
+  </div>
+  <script src="/_sdk/489148d8756906ef.editing_sdk.js" integrity="sha512-hxxSbMNp1t+UEu3j/dIQUU4MJnmsCo0Gs3iQVVS706vrCJ3Yt2+ySOlfJEaPyiyQVLjZRmn1dNVqg6M40VZZHQ=="></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      lucide.createIcons();
+      const slides = Array.from(document.querySelectorAll('.slide'));
+      const dots = document.getElementById('slideDots');
+      const topSlide = document.getElementById('topSlide');
+      const bottomSlide = document.getElementById('bottomSlide');
+      const progressBar = document.getElementById('progressBar');
+      let current = 0;
+
+      slides.forEach((slide, index) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = 'slide-dot' + (index === 0 ? ' active' : '');
+        dot.setAttribute('aria-label', 'Buka slide ' + (index + 1));
+        dot.addEventListener('click', () => showSlide(index));
+        dots.appendChild(dot);
+      });
+
+      function showSlide(index) {
+        current = Math.max(0, Math.min(index, slides.length - 1));
+        slides.forEach((slide, i) => slide.classList.toggle('active', i === current));
+        Array.from(dots.children).forEach((dot, i) => dot.classList.toggle('active', i === current));
+        const label = String(current + 1).padStart(2, '0');
+        topSlide.textContent = label;
+        bottomSlide.textContent = 'SLIDE ' + label;
+        progressBar.style.width = ((current + 1) / slides.length * 100) + '%';
+        document.getElementById('prevBtn').disabled = current === 0;
+        document.getElementById('nextBtn').disabled = current === slides.length - 1;
+      }
+
+      document.getElementById('prevBtn').addEventListener('click', () => showSlide(current - 1));
+      document.getElementById('nextBtn').addEventListener('click', () => showSlide(current + 1));
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowRight') showSlide(current + 1);
+        if (event.key === 'ArrowLeft') showSlide(current - 1);
+        if (event.key === 'Home') showSlide(0);
+        if (event.key === 'End') showSlide(slides.length - 1);
+      });
+      showSlide(0);
+    });
+  </script>
+</body>
+</html>
